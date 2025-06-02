@@ -1,0 +1,135 @@
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class GoP : MonoBehaviour
+{
+    public TMP_Text diviseurText;
+    public TMP_Text dividendeText;
+    public TMP_Text resultText;
+    public TMP_Text soustractionText;
+    public TMP_Text resteText;
+
+    public GameObject diviseurGO;
+    public GameObject dividendeGO;
+    public GameObject resultGO;
+    public GameObject soustractionGO;
+    public GameObject resteGO;
+
+    private int dividend;
+    private int divisor;
+    private int quotient;
+    private int reste;
+    private int sousProduit;
+
+    [Header("Options de réponse")]
+    public TMP_Text[] optionTexts; // Assigne Option1, Option2, Option3 dans l'inspecteur
+    private string correctAnswer;
+    private HiddenPart hidden;
+    public enum HiddenPart { Result, Soustraction, Reste }
+    void Start()
+    {
+        GenerateDivision();
+        HideRandomPart();
+        GenerateOptions(correctAnswer);
+    }
+
+    void GenerateDivision()
+    {
+        int diviseur = Random.Range(2, 10);
+        int result = Random.Range(2, 10);
+        int reste = Random.Range(0, diviseur); // reste < diviseur
+        int produit = diviseur * result;
+        int dividende = produit + reste;
+        int soustraction = produit;
+
+
+        //affecter les objets 
+        diviseurText = diviseurGO.GetComponentInChildren<TMP_Text>();
+        dividendeText = dividendeGO.GetComponentInChildren<TMP_Text>();
+        resultText = resultGO.GetComponentInChildren<TMP_Text>();
+        soustractionText = soustractionGO.GetComponentInChildren<TMP_Text>();
+        resteText = resteGO.GetComponentInChildren<TMP_Text>();
+
+
+
+        // Affecter les textes
+        diviseurText.text = diviseur.ToString();
+        dividendeText.text = dividende.ToString();
+        resultText.text = result.ToString();
+        soustractionText.text = soustraction.ToString();
+        resteText.text = reste.ToString();
+    }
+
+    void HideRandomPart()
+    {
+        hidden = (HiddenPart)Random.Range(0, 3);
+
+        switch (hidden)
+        {
+            case HiddenPart.Result:
+                correctAnswer = resultText.text;
+                resultText.text = "?";
+                AddDropZone(resultText);
+                ShowImage(resultText);
+                break;
+
+            case HiddenPart.Soustraction:
+                correctAnswer = soustractionText.text;
+                soustractionText.text = "?";
+                AddDropZone(soustractionText);
+                ShowImage(soustractionText);
+                break;
+
+            case HiddenPart.Reste:
+                correctAnswer = resteText.text;
+                resteText.text = "?";
+                AddDropZone(resteText);
+                ShowImage(resteText);
+                break;
+        }
+    }
+    void GenerateOptions(string correct)
+    {
+        int correctValue = int.Parse(correct);
+        int correctIndex = Random.Range(0, optionTexts.Length);
+
+        for (int i = 0; i < optionTexts.Length; i++)
+        {
+            if (i == correctIndex)
+            {
+                optionTexts[i].text = correct;
+            }
+            else
+            {
+                int wrongAnswer;
+                do
+                {
+                    wrongAnswer = correctValue + Random.Range(-3, 4);
+                } while (wrongAnswer == correctValue || wrongAnswer < 0);
+
+                optionTexts[i].text = wrongAnswer.ToString();
+            }
+        }
+    }
+
+    public string GetCorrectAnswer() => correctAnswer;
+    public HiddenPart GetHiddenPart() => hidden;
+
+    void AddDropZone(TMP_Text textField)
+    {
+        GameObject target = textField.transform.parent.gameObject;
+
+        if (!target.GetComponent<DropZone>())
+        {
+            target.AddComponent<DropZone>();
+        }
+    }
+    void ShowImage(TMP_Text textField)
+    {
+        Image img = textField.transform.parent.GetComponentInChildren<Image>(true); // true pour les objets inactifs
+        if (img != null)
+            img.gameObject.SetActive(true);
+    }
+
+}
