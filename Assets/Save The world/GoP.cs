@@ -16,17 +16,22 @@ public class GoP : MonoBehaviour
     public GameObject soustractionGO;
     public GameObject resteGO;
 
-    private int dividend;
-    private int divisor;
-    private int quotient;
-    private int reste;
-    private int sousProduit;
+    //private int dividend;
+    //private int divisor;
+    //private int quotient;
+    //private int reste;
+    //private int sousProduit;
 
     [Header("Options de réponse")]
     public TMP_Text[] optionTexts; // Assigne Option1, Option2, Option3 dans l'inspecteur
     private string correctAnswer;
     private HiddenPart hidden;
     public enum HiddenPart { Result, Soustraction, Reste }
+    private DropZone currentDropZone;
+
+
+
+
     void Start()
     {
         GenerateDivision();
@@ -63,32 +68,64 @@ public class GoP : MonoBehaviour
 
     void HideRandomPart()
     {
-        hidden = (HiddenPart)Random.Range(0, 3);
+        hidden =(HiddenPart)Random.Range(1, 1);
 
         switch (hidden)
         {
             case HiddenPart.Result:
                 correctAnswer = resultText.text;
-                resultText.text = "?";
-                AddDropZone(resultText);
+                SetupDropZone(resultText);
+                //resultText.text = "?";
+                //AddDropZone(resultText);
                 ShowImage(resultText);
                 break;
 
             case HiddenPart.Soustraction:
                 correctAnswer = soustractionText.text;
-                soustractionText.text = "?";
-                AddDropZone(soustractionText);
+                SetupDropZone(soustractionText);
+                //soustractionText.text = "?";
+                //AddDropZone(soustractionText);
                 ShowImage(soustractionText);
                 break;
-
             case HiddenPart.Reste:
                 correctAnswer = resteText.text;
-                resteText.text = "?";
-                AddDropZone(resteText);
+                SetupDropZone(resteText);
+                //resteText.text = "?";
+                //AddDropZone(resteText);
                 ShowImage(resteText);
                 break;
         }
     }
+    void SetupDropZone(TMP_Text textComponent)
+    {
+        GameObject textGO = textComponent.gameObject;
+        Transform parent = textGO.transform.parent;
+
+        // Supprimer l'ancienne dropzone si elle existe
+        if (currentDropZone != null)
+        {
+            Destroy(currentDropZone);
+        }
+
+        // Ajouter la nouvelle dropzone
+        currentDropZone = parent.gameObject.AddComponent<DropZone>();
+        currentDropZone.Initialize(textComponent);
+
+        // Changer le texte en "?"
+        textComponent.text = "?";
+
+        // Optionnel : changer l'apparence pour indiquer que c'est une zone de drop
+        ShowDropZoneVisual(textComponent);
+    }
+
+    void ShowDropZoneVisual(TMP_Text textComponent)
+    {
+        // Changer la couleur ou ajouter un effet visuel
+        textComponent.color = Color.red;
+        // Vous pouvez ajouter d'autres effets visuels ici
+    }
+
+
     void GenerateOptions(string correct)
     {
         int correctValue = int.Parse(correct);
@@ -105,10 +142,15 @@ public class GoP : MonoBehaviour
                 int wrongAnswer;
                 do
                 {
-                    wrongAnswer = correctValue + Random.Range(-3, 4);
+                    wrongAnswer = correctValue + Random.Range(-5, 6);
                 } while (wrongAnswer == correctValue || wrongAnswer < 0);
-
                 optionTexts[i].text = wrongAnswer.ToString();
+            }
+
+            // S'assurer que chaque option a un composant Draggable
+            if (optionTexts[i].GetComponent<Draggable>() == null)
+            {
+                optionTexts[i].gameObject.AddComponent<Draggable>();
             }
         }
     }
@@ -116,13 +158,15 @@ public class GoP : MonoBehaviour
     public string GetCorrectAnswer() => correctAnswer;
     public HiddenPart GetHiddenPart() => hidden;
 
-    void AddDropZone(TMP_Text textField)
+    void AddDropZone(TMP_Text textComponent)
     {
-        GameObject target = textField.transform.parent.gameObject;
+        GameObject textGO = textComponent.gameObject;
+        Transform parent = textGO.transform.parent;
 
-        if (!target.GetComponent<DropZone>())
+        // On ajoute DropZone au parent (pas directement au TMP_Text)
+        if (parent.GetComponent<DropZone>() == null)
         {
-            target.AddComponent<DropZone>();
+            DropZone zone = parent.gameObject.AddComponent<DropZone>();
         }
     }
     void ShowImage(TMP_Text textField)
@@ -131,5 +175,34 @@ public class GoP : MonoBehaviour
         if (img != null)
             img.gameObject.SetActive(true);
     }
+
+    public void OnSubmitClicked()
+    {
+        CheckAnswer();
+    }
+   public void CheckAnswer()
+    {
+        if (currentDropZone != null && currentDropZone.targetText != null)
+        {
+            string placedAnswer = currentDropZone.targetText.text;
+
+            // Vérifier si une réponse a été placée
+            if (placedAnswer == "?")
+            {
+                Debug.Log("Veuillez placer une réponse avant de soumettre !");
+                return;
+            }
+
+            if (placedAnswer == correctAnswer)
+            {
+                Debug.Log("good job");
+            }
+            else
+            {
+                Debug.Log("wrong answer");
+            }
+        }
+    }
+
 
 }
