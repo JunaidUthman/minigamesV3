@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "86674134392",
+    "firebase_url": "https://space-math-aa31c-default-rtdb.firebaseio.com",
+    "project_id": "space-math-aa31c",
+    "storage_bucket": "space-math-aa31c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86674134392:android:42ca7f302aa8023f67a48d",
+        "android_client_info": {
+          "package_name": "com.junaidSimo.SpaceMath"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtfuChXG1oYfnaX3MpHZJ-HoJ6Y5DffXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

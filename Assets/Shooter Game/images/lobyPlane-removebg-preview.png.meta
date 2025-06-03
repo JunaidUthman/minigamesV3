@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lobyPlane-removebg-preview_0: -3446316149517775566
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
