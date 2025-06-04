@@ -1,0 +1,23 @@
+# ninja log v5
+3050	6777	7706932659764296	C:/Users/DELL/SpaceMathSimoVersion/SpaceMathGames/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1u1m264x/obj/arm64-v8a/libswappywrapper.so	8f7904def26213ad
+2	11265	7706932703676846	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f9dfe91ea92e3d22
+110	3043	7706932624639025	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	62a6fdf80b1e1363
+64	9134	7706932686092326	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	4efba809dd412ba0
+43	9164	7706932686422032	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	2cbf67b4d68c976c
+32	9527	7706932690019890	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	4efe5ca309ba3515
+76	9258	7706932686792991	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	125d42fd15f18aa1
+90	10367	7706932698350833	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	f006178c421072f4
+21	9318	7706932687714509	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	f248f5dc190c253c
+54	10702	7706932701224547	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	1c43dcdc65b05be9
+11266	12151	7706932716242563	C:/Users/DELL/SpaceMathSimoVersion/SpaceMathGames/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1u1m264x/obj/arm64-v8a/libgame.so	fffbb19f339cb69b
+128	1307	7706994263967671	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	62a6fdf80b1e1363
+1308	2070	7706994269180757	C:/Users/DELL/SpaceMathSimoVersion/SpaceMathGames/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1u1m264x/obj/arm64-v8a/libswappywrapper.so	8f7904def26213ad
+110	6187	7706994312587735	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	4efba809dd412ba0
+48	6314	7706994313262197	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	2cbf67b4d68c976c
+58	6368	7706994313987848	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	f248f5dc190c253c
+93	6413	7706994314241010	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	125d42fd15f18aa1
+37	6613	7706994316589012	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	4efe5ca309ba3515
+102	7054	7706994321363732	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	1c43dcdc65b05be9
+119	7072	7706994321464814	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	f006178c421072f4
+84	7334	7706994324236240	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f9dfe91ea92e3d22
+7334	7604	7706994327038212	C:/Users/DELL/SpaceMathSimoVersion/SpaceMathGames/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1u1m264x/obj/arm64-v8a/libgame.so	fffbb19f339cb69b
