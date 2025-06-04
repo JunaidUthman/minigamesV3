@@ -155,20 +155,20 @@ public class GoP : MonoBehaviour
         }
     }
 
-    public string GetCorrectAnswer() => correctAnswer;
-    public HiddenPart GetHiddenPart() => hidden;
+    //public string GetCorrectAnswer() => correctAnswer;
+    //public HiddenPart GetHiddenPart() => hidden;
 
-    void AddDropZone(TMP_Text textComponent)
-    {
-        GameObject textGO = textComponent.gameObject;
-        Transform parent = textGO.transform.parent;
+    //void AddDropZone(TMP_Text textComponent)
+    //{
+    //    GameObject textGO = textComponent.gameObject;
+    //    Transform parent = textGO.transform.parent;
 
-        // On ajoute DropZone au parent (pas directement au TMP_Text)
-        if (parent.GetComponent<DropZone>() == null)
-        {
-            DropZone zone = parent.gameObject.AddComponent<DropZone>();
-        }
-    }
+    //    // On ajoute DropZone au parent (pas directement au TMP_Text)
+    //    if (parent.GetComponent<DropZone>() == null)
+    //    {
+    //        DropZone zone = parent.gameObject.AddComponent<DropZone>();
+    //    }
+    //}
     void ShowImage(TMP_Text textField)
     {
         Image img = textField.transform.parent.GetComponentInChildren<Image>(true); // true pour les objets inactifs
