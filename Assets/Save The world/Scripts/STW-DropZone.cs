@@ -55,16 +55,28 @@ public class DropZone : MonoBehaviour, IDropHandler
     
     private void ReturnItemToOrigin(Draggable item)
     {
+        CanvasGroup canvasGroup = item.GetComponent<CanvasGroup>();
+
         // Remettre le "?" dans le champ
         if (targetText != null)
         {
             targetText.text = "?";
         }
 
+
         // Réactiver et repositionner l'item
         item.gameObject.SetActive(true);
         item.transform.SetParent(item.originalParent, false);
+        item.transform.localPosition = item.originalPosition;
         item.currentDropZone = null;
+
+        // Réinitialiser l'alpha et les raycasts
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = 1f;           // Opacité normale
+            canvasGroup.blocksRaycasts = true; // Réactive les interactions
+        }
+
 
         heldItem = null;
     }
