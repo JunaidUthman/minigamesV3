@@ -4,6 +4,7 @@ using System.Collections;
 using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
+using UnityEngine.SceneManagement;
 
 public class StandaloneEasyReaderSample : MonoBehaviour
 {
@@ -181,6 +182,7 @@ public class StandaloneEasyReaderSample : MonoBehaviour
 
                     found = true;
                     hasScannedSuccessfully = true;
+                    SceneManager.LoadScene(1);
                     break;
                 }
             }
@@ -191,7 +193,7 @@ public class StandaloneEasyReaderSample : MonoBehaviour
         if (!found)
         {
             lastResult = "User not found in any test.";
-            Debug.LogWarning(lastResult);
+            //Debug.LogWarning(lastResult);
         }
 
         isProcessing = false;
