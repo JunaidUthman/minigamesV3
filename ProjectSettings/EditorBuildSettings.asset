@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/LOBY/Scenes/Loby.unity
     guid: e767f9ec918f4ef41a9105a47cbd787d
   - enabled: 1
-    path: Assets/Shooter Game/Scenes/SampleScene.unity
+    path: Assets/FindComposition/Scenes/FindComposition.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Shooter Game/Scenes/Main sceane.unity
+    path: Assets/FindComposition/Scenes/Menu_FindComposition.unity
     guid: b4ab821475b6f8149b10f2823cadcc87
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 260e18ee6682edd4a9bbf917e3f164a8, type: 2}
