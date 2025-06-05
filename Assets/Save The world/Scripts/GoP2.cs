@@ -1,221 +1,207 @@
-//using UnityEngine;
-//using UnityEngine.UI;
-//using TMPro;
-//using System.Collections.Generic;
+// OpGen2 pour Level 2 - Gestionnaire principal avec trois champs vides
+using UnityEngine;
+using TMPro;
+using System.Collections.Generic;
 
-//public class Gop2 : MonoBehaviour
-//{
-//    public TMP_Text diviseurText;
-//    public TMP_Text dividendeText;
-//    public TMP_Text resultText;
-//    public TMP_Text soustractionText;
-//    public TMP_Text resteText;
+public class OpGen2 : MonoBehaviour
+{
+    [Header("UI Elements")]
+    public TMP_Text dividendeText;
+    public TMP_Text diviseurText;
+    public TMP_Text quotientText;
+    public TMP_Text resteText;
+    public TMP_Text soustractionText;
+    public TMP_Text[] optionTexts; // Les options à glisser
 
-//    public GameObject diviseurGO;
-//    public GameObject dividendeGO;
-//    public GameObject resultGO;
-//    public GameObject soustractionGO;
-//    public GameObject resteGO;
 
-//    [Header("Options de réponse")]
-//    public TMP_Text[] optionTexts; // Assigne Option1, Option2, Option3... dans l'inspecteur
 
-//    // Nouvelles variables pour gérer 3 champs
-//    private Dictionary<string, string> correctAnswers = new Dictionary<string, string>();
-//    private List<DropZone2> activeDropZones = new List<DropZone2>();
+    private List<DropZone> activeDropZones = new List<DropZone>();
+    private Dictionary<DropZone, string> correctAnswers = new Dictionary<DropZone, string>();
 
-//    void Start()
-//    {
-//        GenerateDivision();
-//        HideThreeFields(); // Nouvelle méthode pour cacher 3 champs
-//        GenerateOptions(); // Méthode modifiée
-//    }
+    void Start()
+    {
+        GenerateProblem();
+    }
 
-//    void GenerateDivision()
-//    {
-//        int diviseur = Random.Range(2, 10);
-//        int result = Random.Range(2, 10);
-//        int reste = Random.Range(0, diviseur);
-//        int produit = diviseur * result;
-//        int dividende = produit + reste;
-//        int soustraction = produit;
+    void GenerateProblem()
+    {
+        // Nettoyer les dropzones précédentes
+        //ClearAllDropZones();
 
-//        // Affecter les objets 
-//        diviseurText = diviseurGO.GetComponentInChildren<TMP_Text>();
-//        dividendeText = dividendeGO.GetComponentInChildren<TMP_Text>();
-//        resultText = resultGO.GetComponentInChildren<TMP_Text>();
-//        soustractionText = soustractionGO.GetComponentInChildren<TMP_Text>();
-//        resteText = resteGO.GetComponentInChildren<TMP_Text>();
+        // Générer une division simple
+        int diviseur = Random.Range(2, 10);
+        int quotient = Random.Range(2, 15);
+        int reste = Random.Range(0, diviseur - 1);
+        int dividende = (quotient * diviseur) + reste;
+        int soustraction = quotient * diviseur;
 
-//        // Affecter les textes
-//        diviseurText.text = diviseur.ToString();
-//        dividendeText.text = dividende.ToString();
-//        resultText.text = result.ToString();
-//        soustractionText.text = soustraction.ToString();
-//        resteText.text = reste.ToString();
-//    }
+        // affecter les valeurs aux champs 
+        dividendeText.text = dividende.ToString();
+        diviseurText.text = diviseur.ToString();
+        quotientText.text = quotient.ToString();
+        resteText.text = reste.ToString();
+        soustractionText.text = soustraction.ToString();
 
-//    void HideThreeFields()
-//    {
-//        // Nettoyer les données précédentes
-//        correctAnswers.Clear();
-//        activeDropZones.Clear();
+        // 3 champs à cacher 
+        List<TMP_Text> availableFields = new List<TMP_Text>
+        {
+            quotientText,
+            resteText,
+            soustractionText
+        };
 
-//        // Cacher et configurer les 3 champs
-//        SetupDropZone(resultText, "Result");
-//        SetupDropZone(soustractionText, "Soustraction");
-//        SetupDropZone(resteText, "Reste");
-//    }
+        // Mélanger la liste
+        //for (int i = 0; i < availableFields.Count; i++)
+        //{
+        //    TMP_Text temp = availableFields[i];
+        //    int randomIndex = Random.Range(i, availableFields.Count);
+        //    availableFields[i] = availableFields[randomIndex];
+        //    availableFields[randomIndex] = temp;
+        //}
 
-//    void SetupDropZone(TMP_Text textComponent, string fieldName)
-//    {
-//        GameObject textGO = textComponent.gameObject;
-//        Transform parent = textGO.transform.parent;
+        // Prendre les 3 premiers pour les cacher
+        for (int i = 0; i < 3; i++)
+        {
+            string correctValue = availableFields[i].text;
+            SetupDropZone(availableFields[i], correctValue);
+        }
 
-//        // Sauvegarder la bonne réponse
-//        correctAnswers[fieldName] = textComponent.text;
+        // Générer les options avec les bonnes réponses
+        GenerateOptions();
+    }
 
-//        // Ajouter la dropzone
-//        DropZone2 dropZone = parent.gameObject.AddComponent<DropZone2>();
-//        dropZone.Initialize(textComponent, fieldName); // Méthode modifiée
-//        activeDropZones.Add(dropZone);
+    void SetupDropZone(TMP_Text textComponent, string correctAnswer)
+    {
+        GameObject textGO = textComponent.gameObject;
+        Transform parent = textGO.transform.parent;
 
-//        // Changer le texte en "?"
-//        textComponent.text = "?";
+        // Ajouter la dropzone
+        DropZone dropZone = parent.gameObject.AddComponent<DropZone>();
+        dropZone.Initialize(textComponent);
 
-//        // Effet visuel
-//        ShowDropZoneVisual(textComponent);
-//        ShowImage(textComponent);
-//    }
+        // Changer le texte en "?"
+        textComponent.text = "?";
 
-//    void ShowDropZoneVisual(TMP_Text textComponent)
-//    {
-//        textComponent.color = Color.red;
-//    }
+        // Effet visuel pour indiquer une zone de drop
+        textComponent.color = Color.red;
 
-//    void GenerateOptions()
-//    {
-//        // Créer une liste de toutes les bonnes réponses
-//        List<string> allCorrectAnswers = new List<string>(correctAnswers.Values);
+        // Enregistrer la dropzone et sa bonne réponse
+        activeDropZones.Add(dropZone);
+        correctAnswers[dropZone] = correctAnswer;
+    }
 
-//        // Mélanger les bonnes réponses pour les distribuer aléatoirement
-//        for (int i = 0; i < allCorrectAnswers.Count; i++)
-//        {
-//            string temp = allCorrectAnswers[i];
-//            int randomIndex = Random.Range(i, allCorrectAnswers.Count);
-//            allCorrectAnswers[i] = allCorrectAnswers[randomIndex];
-//            allCorrectAnswers[randomIndex] = temp;
-//        }
+    void GenerateOptions()
+    {
+        List<string> allCorrectAnswers = new List<string>(correctAnswers.Values);
+        List<string> options = new List<string>(allCorrectAnswers);
 
-//        // Assigner les options
-//        for (int i = 0; i < optionTexts.Length; i++)
-//        {
-//            if (i < allCorrectAnswers.Count)
-//            {
-//                // Assigner une bonne réponse
-//                optionTexts[i].text = allCorrectAnswers[i];
-//            }
-//            else
-//            {
-//                // Générer une mauvaise réponse
-//                int wrongAnswer;
-//                do
-//                {
-//                    wrongAnswer = Random.Range(1, 20);
-//                } while (allCorrectAnswers.Contains(wrongAnswer.ToString()));
+        // Ajouter 2 fausses réponses
+        while (options.Count < 5)
+        {
+            string wrongAnswer;
+            do
+            {
+                int baseValue = int.Parse(allCorrectAnswers[Random.Range(0, allCorrectAnswers.Count)]);
+                wrongAnswer = (baseValue + Random.Range(-10, 11)).ToString();
+            } while (options.Contains(wrongAnswer) || int.Parse(wrongAnswer) < 0);
 
-//                optionTexts[i].text = wrongAnswer.ToString();
-//            }
+            options.Add(wrongAnswer);
+        }
 
-//            // S'assurer que chaque option a un composant Draggable
-//            if (optionTexts[i].GetComponent<Draggable>() == null)
-//            {
-//                optionTexts[i].gameObject.AddComponent<Draggable>();
-//            }
-//        }
-//    }
+        // Mélanger les options
+        for (int i = 0; i < options.Count; i++)
+        {
+            string temp = options[i];
+            int randomIndex = Random.Range(i, options.Count);
+            options[i] = options[randomIndex];
+            options[randomIndex] = temp;
+        }
 
-//    void ShowImage(TMP_Text textField)
-//    {
-//        Image img = textField.transform.parent.GetComponentInChildren<Image>(true);
-//        if (img != null)
-//            img.gameObject.SetActive(true);
-//    }
+        // Assigner aux 5 TMP_Text dans optionTexts
+        for (int i = 0; i < optionTexts.Length && i < options.Count; i++)
+        {
+            optionTexts[i].text = options[i];
 
-//    public void OnSubmitClicked()
-//    {
-//        CheckAnswer();
-//    }
+            if (optionTexts[i].GetComponent<Draggable>() == null)
+            {
+                optionTexts[i].gameObject.AddComponent<Draggable>();
+            }
+        }
+    }
 
-//    public void CheckAnswer()
-//    {
-//        bool allCorrect = true;
-//        int correctCount = 0;
+    public void OnSubmitClicked()
+    {
+        CheckAnswers();
+    }
 
-//        foreach (DropZone2 dropZone in activeDropZones)
-//        {
-//            if (dropZone.targetText != null)
-//            {
-//                string placedAnswer = dropZone.targetText.text;
-//                string correctAnswer = correctAnswers[dropZone.fieldName];
+    void CheckAnswers()
+    {
+        int correctCount = 0;
+        bool allFilled = true;
 
-//                if (placedAnswer == "?")
-//                {
-//                    Debug.Log($"Veuillez placer une réponse pour {dropZone.fieldName}!");
-//                    allCorrect = false;
-//                }
-//                else if (placedAnswer == correctAnswer)
-//                {
-//                    correctCount++;
-//                    // Changer la couleur en vert pour indiquer que c'est correct
-//                    dropZone.targetText.color = Color.green;
-//                }
-//                else
-//                {
-//                    allCorrect = false;
-//                    // Garder la couleur rouge pour indiquer l'erreur
-//                    dropZone.targetText.color = Color.red;
-//                }
-//            }
-//        }
+        foreach (DropZone dropZone in activeDropZones)
+        {
+            if (dropZone.targetText.text == "?")
+            {
+                allFilled = false;
+                break;
+            }
 
-//        // Afficher le résultat
-//        if (allCorrect && correctCount == 3)
-//        {
-//            Debug.Log("Parfait ! Toutes les réponses sont correctes !");
-//        }
-//        else
-//        {
-//            Debug.Log($"Vous avez {correctCount}/3 réponses correctes. Continuez !");
-//        }
-//    }
+            if (dropZone.targetText.text == correctAnswers[dropZone])
+            {
+                correctCount++;
+                dropZone.targetText.color = Color.green;
+            }
+            else
+            {
+                dropZone.targetText.color = Color.red;
+            }
+        }
 
-//    // Méthode pour recommencer
-//    public void RestartLevel()
-//    {
-//        // Nettoyer les dropzones existantes
-//        foreach (DropZone2 dropZone in activeDropZones)
-//        {
-//            if (dropZone != null)
-//            {
-//                dropZone.ClearDropZone();
-//                Destroy(dropZone);
-//            }
-//        }
+        if (!allFilled)
+        {
+            Debug.Log("Veuillez remplir tous les champs avant de soumettre !");
+            return;
+        }
 
-//        // Remettre toutes les options à leur place
-//        foreach (TMP_Text option in optionTexts)
-//        {
-//            Draggable draggable = option.GetComponent<Draggable>();
-//            if (draggable != null)
-//            {
-//                draggable.ReturnToOrigin();
-//            }
-//        }
+        if (correctCount == activeDropZones.Count)
+        {
+            Debug.Log("Toutes les réponses sont correctes !");
+        }
+        else
+        {
+            Debug.Log("Certaines réponses sont incorrectes, essayez encore !");
+        }
+        Debug.Log($"Nombre de réponses correctes : {correctCount} sur {activeDropZones.Count}");
+    }
 
-//        // Regenerer le problème
-//        GenerateDivision();
-//        HideThreeFields();
-//        GenerateOptions();
-//    }
-//}
+    
+
+
+    //void ClearAllDropZones()
+    //{
+    //    foreach (DropZone dropZone in activeDropZones)
+    //    {
+    //        if (dropZone != null)
+    //        {
+    //            dropZone.ClearDropZone();
+    //            Destroy(dropZone);
+    //        }
+    //    }
+
+    //    activeDropZones.Clear();
+    //    correctAnswers.Clear();
+
+    //    // Remettre toutes les options à leur place
+    //    foreach (TMP_Text option in optionTexts)
+    //    {
+    //        Draggable draggable = option.GetComponent<Draggable>();
+    //        if (draggable != null)
+    //        {
+    //            draggable.ReturnToOrigin();
+    //        }
+    //    }
+    //}
+
+    
+}
