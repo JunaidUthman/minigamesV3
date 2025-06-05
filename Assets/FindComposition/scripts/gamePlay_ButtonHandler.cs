@@ -7,14 +7,14 @@ public class gamePlay_ButtonHandler : MonoBehaviour
     public void replay()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadSceneAsync(2);
     }
 
 
     public void exitToMenue()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(3);
     }
 
     public void pause()

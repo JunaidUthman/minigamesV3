@@ -47,7 +47,7 @@ public class entringGames : MonoBehaviour
             galaxyButtonCanvas.SetActive(true);
             Debug.Log("the value of the galaxy button is" + galaxyButton);
 
-            if (galaxyButton) SceneManager.LoadScene(1);
+            if (galaxyButton) SceneManager.LoadScene(3);
         }
 
     }
@@ -56,15 +56,15 @@ public class entringGames : MonoBehaviour
     {
         if (galaxyButton)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
         else if (planet1Button)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
         else if (planet2Button)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
     }
 

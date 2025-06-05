@@ -267,6 +267,8 @@ GameObject:
   - component: {fileID: 2037833490}
   - component: {fileID: 2037833489}
   - component: {fileID: 2037833491}
+  - component: {fileID: 2037833492}
+  - component: {fileID: 2037833493}
   m_Layer: 0
   m_Name: testCam
   m_TagString: Untagged
@@ -313,9 +315,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 2037833488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10a29453d83e4884dae50ce8b8541ba0, type: 3}
+  m_Script: {fileID: 11500000, guid: adb8abe2618fcff4e8b9259af6d78a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2037833492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037833488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3083812b361fe3a42b6456a065e3f07d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  coins: 0
+  mathLevel: 0
+  testId: 
+--- !u!114 &2037833493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037833488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2bb5b683d5357e4ba5e0ce776e191e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  findComposition:
+    maxNumberRange: 0
+    numOperations: 0
+    order: 0
+    requiredCorrectAnswersMinimumPercent: 0
+  chooseAnswer:
+    maxNumberRange: 0
+    numOperations: 0
+    order: 0
+    requiredCorrectAnswersMinimumPercent: 0
+  verticalOperations:
+    maxNumberRange: 0
+    numOperations: 0
+    order: 0
+    requiredCorrectAnswersMinimumPercent: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
