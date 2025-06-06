@@ -1,16 +1,19 @@
-// OpGen2 pour Level 2 - Gestionnaire principal avec trois champs vides
-using UnityEngine;
-using TMPro;
 using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
 
-public class OpGen2 : MonoBehaviour
+public class GoP3 : MonoBehaviour
 {
+
+
     [Header("UI Elements")]
     public TMP_Text dividendeText;
     public TMP_Text diviseurText;
     public TMP_Text quotientText;
     public TMP_Text resteText;
-    public TMP_Text soustractionText;
+    public TMP_Text soustr1Text;
+    public TMP_Text soustrResultText;
+    public TMP_Text soustr2Text;
     public TMP_Text[] optionTexts; // Les options à glisser
 
 
@@ -29,38 +32,51 @@ public class OpGen2 : MonoBehaviour
         //ClearAllDropZones();
 
         // Générer une division simple
-        int diviseur = Random.Range(2, 10);
-        int quotient = Random.Range(2, 15);
-        int reste = Random.Range(0, diviseur - 1);
-        int dividende = (quotient * diviseur) + reste;
-        int soustraction = quotient * diviseur;
+        int diviseur = Random.Range(2, 15); // diviseur simple
 
-        // affecter les valeurs aux champs 
-        dividendeText.text = dividende.ToString();
+        int factor1 = Random.Range(4, 15);  // multiple 1
+        int factor2 = Random.Range(2, 10);  // multiple 2
+
+        int produit1 = diviseur * factor1;
+        int produit2 = diviseur * factor2;
+
+        int quotient = factor1 + factor2;
+
+        int reste = Random.Range(0, diviseur); // peut être 0 ou plus, mais < diviseur
+
+        int dividu = produit1 + produit2 + reste;
+
+        // Assignation aux champs TMP_Text
         diviseurText.text = diviseur.ToString();
+        dividendeText.text = dividu.ToString();
         quotientText.text = quotient.ToString();
         resteText.text = reste.ToString();
-        soustractionText.text = soustraction.ToString();
+
+        soustr1Text.text = produit1.ToString(); // première soustraction
+        soustrResultText.text = (dividu - produit1).ToString(); // reste intermédiaire
+        soustr2Text.text = produit2.ToString(); // deuxième soustraction
 
         // 3 champs à cacher 
         List<TMP_Text> availableFields = new List<TMP_Text>
         {
             quotientText,
             resteText,
-            soustractionText
+            soustr1Text,
+            soustrResultText,
+            soustr2Text
         };
 
-        // Mélanger la liste
-        //for (int i = 0; i < availableFields.Count; i++)
-        //{
-        //    TMP_Text temp = availableFields[i];
-        //    int randomIndex = Random.Range(i, availableFields.Count);
-        //    availableFields[i] = availableFields[randomIndex];
-        //    availableFields[randomIndex] = temp;
-        //}
+        //Mélanger la liste
+        for (int i = 0; i < availableFields.Count; i++)
+        {
+            TMP_Text temp = availableFields[i];
+            int randomIndex = Random.Range(i, availableFields.Count);
+            availableFields[i] = availableFields[randomIndex];
+            availableFields[randomIndex] = temp;
+        }
 
         // Prendre les 3 premiers pour les cacher
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             string correctValue = availableFields[i].text;
             SetupDropZone(availableFields[i], correctValue);
@@ -92,35 +108,43 @@ public class OpGen2 : MonoBehaviour
 
     void GenerateOptions()
     {
-        List<string> allCorrectAnswers = new List<string>(correctAnswers.Values);
-        List<string> options = new List<string>(allCorrectAnswers);
+        // Prendre les 4 bonnes réponses
+        List<string> trueAnswers = new List<string>(correctAnswers.Values);
+        List<string> allOptions = new List<string>(trueAnswers);
 
-        // Ajouter 2 fausses réponses
-        while (options.Count < 5)
+        //afficher les bonnes réponses dans les options
+        for (int i = 0; i < trueAnswers.Count && i < optionTexts.Length; i++)
         {
-            string wrongAnswer;
-            do
-            {
-                int baseValue = int.Parse(allCorrectAnswers[Random.Range(0, allCorrectAnswers.Count)]);
-                wrongAnswer = (baseValue + Random.Range(-10, 11)).ToString();
-            } while (options.Contains(wrongAnswer) || int.Parse(wrongAnswer) < 0);
 
-            options.Add(wrongAnswer);
+            Debug.Log(trueAnswers[i]);
+
+        }
+
+
+        // Ajouter 2 mauvaises réponses différentes
+        while (allOptions.Count < 6)
+        {
+            int baseValue = int.Parse(trueAnswers[Random.Range(0, trueAnswers.Count)]);
+            int wrong = baseValue + Random.Range(-10, 11);
+
+            // S'assurer qu'elle est positive et non déjà incluse
+            if (wrong >= 0 && !allOptions.Contains(wrong.ToString()))
+            {
+                allOptions.Add(wrong.ToString());
+            }
         }
 
         // Mélanger les options
-        for (int i = 0; i < options.Count; i++)
+        for (int i = 0; i < allOptions.Count; i++)
         {
-            string temp = options[i];
-            int randomIndex = Random.Range(i, options.Count);
-            options[i] = options[randomIndex];
-            options[randomIndex] = temp;
+            int rand = Random.Range(i, allOptions.Count);
+            (allOptions[i], allOptions[rand]) = (allOptions[rand], allOptions[i]);
         }
 
-        // Assigner aux 5 TMP_Text dans optionTexts
-        for (int i = 0; i < optionTexts.Length && i < options.Count; i++)
+        // Assigner aux textes d’option (supposé avoir 6 TMP_Text)
+        for (int i = 0; i < optionTexts.Length && i < allOptions.Count; i++)
         {
-            optionTexts[i].text = options[i];
+            optionTexts[i].text = allOptions[i];
 
             if (optionTexts[i].GetComponent<Draggable>() == null)
             {
@@ -128,6 +152,7 @@ public class OpGen2 : MonoBehaviour
             }
         }
     }
+
 
     public void OnSubmitClicked()
     {
@@ -175,7 +200,7 @@ public class OpGen2 : MonoBehaviour
         Debug.Log($"Nombre de réponses correctes : {correctCount} sur {activeDropZones.Count}");
     }
 
-    
+
 
 
     //void ClearAllDropZones()
@@ -203,5 +228,5 @@ public class OpGen2 : MonoBehaviour
     //    }
     //}
 
-    
+
 }

@@ -68,7 +68,7 @@ public class GoP : MonoBehaviour
 
     void HideRandomPart()
     {
-        hidden =(HiddenPart)Random.Range(1, 1);
+        hidden =(HiddenPart)Random.Range(0, 3);
 
         switch (hidden)
         {
@@ -116,6 +116,7 @@ public class GoP : MonoBehaviour
 
         // Optionnel : changer l'apparence pour indiquer que c'est une zone de drop
         ShowDropZoneVisual(textComponent);
+
     }
 
     void ShowDropZoneVisual(TMP_Text textComponent)
