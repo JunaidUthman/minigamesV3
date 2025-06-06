@@ -23,6 +23,7 @@ public class GameConfig
 {
     public int maxNumberRange;
     public int numOperations;
+    public int numComposition;
     public int order;
     public int requiredCorrectAnswersMinimumPercent;
 }

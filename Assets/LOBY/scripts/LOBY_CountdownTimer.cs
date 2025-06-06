@@ -1,33 +1,44 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 
 public class CountdownTimer : MonoBehaviour
 {
-    //this variable ghanjibha mn database
-    public float timeRemaining = 1800f; // 30 minutes in seconds
-    public TextMeshProUGUI timerText;              // Assign a UI Text in the Inspector
-
+    private float timeRemaining;
+    public TextMeshProUGUI timerText;
     private bool timerIsRunning = true;
+
+    void Start()
+    {
+        // Start a coroutine that waits until PlayerGlobalData.Instance is ready
+        StartCoroutine(WaitForPlayerGlobalData());
+    }
+
+    private IEnumerator WaitForPlayerGlobalData()
+    {
+        // Wait until PlayerGlobalData.Instance is NOT null
+        while (PlayerGlobalData.Instance == null)
+        {
+            //Debug.Log("Waiting for PlayerGlobalData to be initialized...");
+            yield return null; // wait for next frame
+        }
+
+        // Once ready, initialize timer
+        timeRemaining = PlayerGlobalData.Instance.gameDuration * 60f;
+        Debug.Log("PlayerGlobalData is ready, timer initialized with time: " + timeRemaining);
+    }
 
     void Update()
     {
-        if (timerIsRunning)
+        if (TimeManager.Instance != null)
         {
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-                UpdateTimerDisplay();
-            }
-            else
-            {
-                timeRemaining = 0;
-                timerIsRunning = false;
-                GameOver();
-            }
+            float t = TimeManager.Instance.timeRemaining;
+            int minutes = Mathf.FloorToInt(t / 60f);
+            int seconds = Mathf.FloorToInt(t % 60f);
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
     }
+
 
     void UpdateTimerDisplay()
     {
@@ -36,10 +47,4 @@ public class CountdownTimer : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    void GameOver()
-    {
-        Debug.Log("Time is up!");
-        Time.timeScale = 0f;
-
-    }
 }

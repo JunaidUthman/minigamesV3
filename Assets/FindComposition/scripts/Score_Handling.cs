@@ -4,11 +4,11 @@ using System.Collections.Generic;
 public class Score_Handling : MonoBehaviour
 {
     //--------------Data base attributes ----------
-
+    public int score = 0;
     //==============Game Data ==============
     int rigthAnswerLayerNumber = 7;
     public TMP_Text scoreText;
-    public int score = 0;
+    
     void Start()
     {
         

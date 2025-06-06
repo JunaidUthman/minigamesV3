@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LobyPlayer_movementforspaceship_movementFor : MonoBehaviour
 {
@@ -41,5 +41,3 @@ public class LobyPlayer_movementforspaceship_movementFor : MonoBehaviour
         }
     }
 }
-
-

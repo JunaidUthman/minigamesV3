@@ -1,6 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using Firebase.Extensions;
+
+using Firebase.Database;
+
 
 public class targetHandler : MonoBehaviour
 {
@@ -8,8 +12,10 @@ public class targetHandler : MonoBehaviour
     private rockMovement RockMovementRef;
     private rock_falling RockFallingRef;
 
-    int maxRange = 10;
-    int minCompositions = 7;
+    private ScoreDelivering ScoreDeliveringRef;
+
+    int maxRange =  GameConfigManager.Instance.findComposition.maxNumberRange;
+    int minCompositions = GameConfigManager.Instance.findComposition.numComposition;
 
     int index = 0;
     int newTarget;
@@ -25,15 +31,18 @@ public class targetHandler : MonoBehaviour
 
     void Start()
     {
+        
         ScoreHandlerRef = GameObject.Find("player_ship").GetComponent<Score_Handling>();
         RockMovementRef = GameObject.Find("rock_generation").GetComponent<rockMovement>();
+
+        ScoreDeliveringRef = GameObject.Find("player_ship").GetComponent<ScoreDelivering>();
         //RockFallingRef = GameObject.Find("rock_falling").GetComponent<rock_falling>();
 
     }
 
     void Update()
     {
-        if (ScoreHandlerRef.score >= 5 && ScoreHandlerRef.score < 10 && !level2)
+        if (ScoreHandlerRef.score >= 1 && ScoreHandlerRef.score < 2 && !level2)
         {
             level2 = true;
             Debug.Log("level 2");
@@ -59,7 +68,7 @@ public class targetHandler : MonoBehaviour
 
             rightAnswers = DivisionCompositionGenerator.GenerateRightDivisionCompositionsAsText(newTarget, maxRange, minCompositions);
             Debug.Log(string.Join(", ", rightAnswers));
-            wrongAnswers = DivisionCompositionGenerator.GenerateWrongDivisionCompositionsAsText(newTarget, maxRange -1, minCompositions);
+            wrongAnswers = DivisionCompositionGenerator.GenerateWrongDivisionCompositionsAsText(newTarget, maxRange - 1, minCompositions);
 
             RockMovementRef.RightdivisionCompositions = rightAnswers;
             RockMovementRef.WrongdivisionCompositions = wrongAnswers;
@@ -67,7 +76,7 @@ public class targetHandler : MonoBehaviour
             targetText.text = "target :" + newTarget;
         }
 
-        else if(ScoreHandlerRef.score >= 27 && !level4)
+        else if (ScoreHandlerRef.score >= 27 && !level4)
         {
             Debug.Log("hello , im in level 3");
             level4 = true;
@@ -84,6 +93,14 @@ public class targetHandler : MonoBehaviour
             RockMovementRef.WrongdivisionCompositions = wrongAnswers;
 
             targetText.text = "target :" + newTarget;
+        }
+        else if (ScoreHandlerRef.score == 32)
+        {
+            int lastScore = ScoreHandlerRef.score;
+            Time.timeScale = 0f;
+
+            ScoreDeliveringRef.deliverScore(lastScore);
+
         }
     }
 }

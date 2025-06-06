@@ -3,7 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class gamePlay_ButtonHandler : MonoBehaviour
 {
+
+    private ScoreDelivering ScoreDeliveringRef;
+    private Score_Handling ScoreHandlerRef;
+
     public GameObject PauseMenueRef;
+
+    void Start()
+    {
+        ScoreDeliveringRef = GameObject.Find("player_ship").GetComponent<ScoreDelivering>();
+        ScoreHandlerRef = GameObject.Find("player_ship").GetComponent<Score_Handling>();
+    }
     public void replay()
     {
         Time.timeScale = 1f;
@@ -14,6 +24,7 @@ public class gamePlay_ButtonHandler : MonoBehaviour
     public void exitToMenue()
     {
         Time.timeScale = 1f;
+        ScoreDeliveringRef.deliverScore(ScoreHandlerRef.score);
         SceneManager.LoadSceneAsync(3);
     }
 

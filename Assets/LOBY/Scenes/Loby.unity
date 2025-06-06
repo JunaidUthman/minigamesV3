@@ -1970,6 +1970,7 @@ GameObject:
   - component: {fileID: 994970275}
   - component: {fileID: 994970277}
   - component: {fileID: 994970278}
+  - component: {fileID: 994970279}
   m_Layer: 11
   m_Name: player_ship
   m_TagString: Untagged
@@ -1989,6 +1990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f0c2d8c0b44acf4e9811e5de6838994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 15
   rotSpeed: 180
 --- !u!212 &994970272
 SpriteRenderer:
@@ -2267,9 +2269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e6650ffe104174d81596a6ec4c8b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 15
-  rotSpeed: 360
-  joystick: {fileID: 2105264784}
 --- !u!114 &994970278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2300,6 +2299,21 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &994970279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994970270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7891a5c67479e4295cabe76d0b0ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 15
+  rotSpeed: 360
+  joystick: {fileID: 2105264784}
 --- !u!1 &1015955237
 GameObject:
   m_ObjectHideFlags: 0
@@ -4088,7 +4102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c45759025ef4e8499cf6113a922570f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 1800
   timerText: {fileID: 1690292055}
 --- !u!114 &1792854257
 MonoBehaviour:

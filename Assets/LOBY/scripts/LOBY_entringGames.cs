@@ -72,17 +72,20 @@ public class entringGames : MonoBehaviour
     {
         if (other.gameObject.name == "planet1")
         {
-            planet1ButtonCanvas.SetActive(false);
+            //planet1ButtonCanvas.SetActive(false);
+            Debug.Log("kanchof wach lprobleme men OntriggerExit2D dyal lplanet");
 
         }
         else if (other.gameObject.name == "planet2")
         {
-            planet2ButtonCanvas.SetActive(false);
+            //planet2ButtonCanvas.SetActive(false);
+            Debug.Log("kanchof wach lprobleme men OntriggerExit2D dyal lplanet");
 
         }
         else if (other.gameObject.name == "galaxy")
         {
-            galaxyButtonCanvas.SetActive(false);
+            //galaxyButtonCanvas.SetActive(false);
+            Debug.Log("kanchof wach lprobleme men OntriggerExit2D dyal lplanet");
 
         }
     }

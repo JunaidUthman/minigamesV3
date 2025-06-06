@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6424866636884651954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7965553980933153282}
+  - component: {fileID: 7256515994604849346}
+  - component: {fileID: 129066415911277361}
+  - component: {fileID: 8554514274372706724}
+  - component: {fileID: 8081919996932550853}
+  m_Layer: 0
+  m_Name: PlayerGlobalData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7965553980933153282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6424866636884651954}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.2579372, y: 4.8055396, z: 21219.215}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7256515994604849346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6424866636884651954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c2434516bebe847845ea42cabc598a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastResult: 
+  logAvailableWebcams: 0
+  selectedWebcamIndex: 0
+--- !u!114 &129066415911277361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6424866636884651954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb8abe2618fcff4e8b9259af6d78a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8554514274372706724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6424866636884651954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3083812b361fe3a42b6456a065e3f07d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  coins: 0
+  mathLevel: 0
+  score: 0
+  testId: 
+  gameDuration: 0
+--- !u!114 &8081919996932550853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6424866636884651954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2bb5b683d5357e4ba5e0ce776e191e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  findComposition:
+    maxNumberRange: 0
+    numOperations: 0
+    order: 0
+    requiredCorrectAnswersMinimumPercent: 0
+  chooseAnswer:
+    maxNumberRange: 0
+    numOperations: 0
+    order: 0
+    requiredCorrectAnswersMinimumPercent: 0
+  verticalOperations:
+    maxNumberRange: 0
+    numOperations: 0
+    order: 0
+    requiredCorrectAnswersMinimumPercent: 0
