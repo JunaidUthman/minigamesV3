@@ -7,6 +7,7 @@ public class ScoreDelivering : MonoBehaviour
 {
     public void deliverScore(int lastScore)
     {
+        // storing the score in the firebase database
         if (FirebaseManager.Instance != null && FirebaseManager.Instance.IsFirebaseReady)
         {
             Debug.Log("fire base instance exist");
@@ -62,6 +63,16 @@ public class ScoreDelivering : MonoBehaviour
 
 
             });
+        }
+        // storing the score in the GameConfigSingletons.findCompositionScore
+        if (GameConfigManager.Instance != null)
+        {
+            GameConfigManager.Instance.findCompositionScore = lastScore;
+            Debug.Log("the last score of Find Compo game is stored correctly in the GameConfigSingletons :" + GameConfigManager.Instance.findCompositionScore);
+        }
+        else
+        {
+            Debug.LogError("GameConfigManager instance is not available.");
         }
     }
 }

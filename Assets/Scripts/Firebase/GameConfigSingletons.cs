@@ -10,6 +10,10 @@ public class GameConfigManager : MonoBehaviour
     public GameConfig chooseAnswer;
     public GameConfig verticalOperations;
 
+    public int findCompositionScore;
+    public int chooseAnswerScore;
+    public int verticalOperationsScore;
+
     private void Awake()
     {
         if (Instance != null) { Destroy(gameObject); return; }

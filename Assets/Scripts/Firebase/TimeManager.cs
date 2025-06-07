@@ -45,6 +45,6 @@ public class TimeManager : MonoBehaviour
     {
         Debug.Log("Time is up. Test ends.");
         Time.timeScale = 0f;
-        // TODO :: call a function to calculate the the score of the tree games , and store it as a math level in the dataBase
+        SceneManager.LoadScene(4);
     }
 }

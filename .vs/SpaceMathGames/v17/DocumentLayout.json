@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\LOBY\\scripts\\LOBY_guideScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\LOBY\\scripts\\LOBY_guideScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\rock_falling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\FindComposition\\scripts\\rock_falling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -166,11 +170,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "LOBY_guideScript.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\LOBY\\scripts\\LOBY_guideScript.cs",
+              "RelativeDocumentMoniker": "Assets\\LOBY\\scripts\\LOBY_guideScript.cs",
+              "ToolTip": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\LOBY\\scripts\\LOBY_guideScript.cs",
+              "RelativeToolTip": "Assets\\LOBY\\scripts\\LOBY_guideScript.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAABsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T23:43:47.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "DebugUpdater.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Library\\PackageCache\\com.unity.render-pipelines.core@fe255bed7938\\Runtime\\Debugging\\DebugUpdater.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.core@fe255bed7938\\Runtime\\Debugging\\DebugUpdater.cs",
@@ -182,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "rock_falling.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\rock_falling.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\rock_falling.cs",
@@ -195,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "targetHandler.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\targetHandler.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\targetHandler.cs",
@@ -207,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "rockMovement.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\rockMovement.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\rockMovement.cs",
@@ -219,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "GameConfigSingletons.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
@@ -231,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AndroidCodeReaderSample.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Authuntication\\Scripts\\AndroidCodeReaderSample.cs",
               "RelativeDocumentMoniker": "Assets\\Authuntication\\Scripts\\AndroidCodeReaderSample.cs",
@@ -243,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "LOBY_entringGames.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\LOBY\\scripts\\LOBY_entringGames.cs",
               "RelativeDocumentMoniker": "Assets\\LOBY\\scripts\\LOBY_entringGames.cs",
@@ -255,7 +272,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Menue_ShooterbuttonHandler.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\Menue_ShooterbuttonHandler.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\Menue_ShooterbuttonHandler.cs",
@@ -267,7 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PlayerGlobalData.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\PlayerGlobalData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\PlayerGlobalData.cs",
@@ -279,7 +296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "LOBY_CountdownTimer.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\LOBY\\scripts\\LOBY_CountdownTimer.cs",
               "RelativeDocumentMoniker": "Assets\\LOBY\\scripts\\LOBY_CountdownTimer.cs",
@@ -291,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "FirebaseManager.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\FirebaseManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\FirebaseManager.cs",
@@ -303,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "gamePlay_ButtonHandler.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\gamePlay_ButtonHandler.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\gamePlay_ButtonHandler.cs",
@@ -315,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "gameOver.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\gameOver.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\gameOver.cs",
@@ -327,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "DivisionCompositionGenerator.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\DivisionCompositionGenerator.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\DivisionCompositionGenerator.cs",
@@ -339,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ScoreDelivering.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\ScoreDelivering.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\ScoreDelivering.cs",
@@ -351,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "player_damage.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\player_damage.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\player_damage.cs",
@@ -363,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Score_Handling.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\Score_Handling.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\Score_Handling.cs",
@@ -375,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "TimeHandling.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\TimeHandling.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\TimeHandling.cs",
@@ -387,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "TimeManager.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\TimeManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\TimeManager.cs",
@@ -399,7 +416,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "SpaceshipJoystickMovement.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\LOBY\\scripts\\SpaceshipJoystickMovement.cs",
               "RelativeDocumentMoniker": "Assets\\LOBY\\scripts\\SpaceshipJoystickMovement.cs",
@@ -411,7 +428,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "testInfos.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\testInfos.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\testInfos.cs",
@@ -423,7 +440,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "PlayerControls.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\PlayerControls.cs",
               "RelativeDocumentMoniker": "Assets\\PlayerControls.cs",
@@ -435,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "AST-birdScript.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\astronaut\\Scripts\\AST-birdScript.cs",
               "RelativeDocumentMoniker": "Assets\\astronaut\\Scripts\\AST-birdScript.cs",
@@ -447,7 +464,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "player_shooting_.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\player_shooting_.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\player_shooting_.cs",
@@ -459,7 +476,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "player_movement.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\player_movement.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\player_movement.cs",
@@ -471,7 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "LOBY_player_movement.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\LOBY\\scripts\\LOBY_player_movement.cs",
               "RelativeDocumentMoniker": "Assets\\LOBY\\scripts\\LOBY_player_movement.cs",
@@ -483,7 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "PlayerDataManager.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\PlayerDataManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\PlayerDataManager.cs",
@@ -495,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "QRCodeHandler.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Authuntication\\Scripts\\QRCodeHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Authuntication\\Scripts\\QRCodeHandler.cs",
@@ -507,7 +524,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "TestModel.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Models\\TestModel.cs",
               "RelativeDocumentMoniker": "Assets\\Models\\TestModel.cs",
@@ -519,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "GroupModel.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Models\\GroupModel.cs",
               "RelativeDocumentMoniker": "Assets\\Models\\GroupModel.cs",
@@ -531,7 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "RewardProfile.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Models\\RewardProfile.cs",
               "RelativeDocumentMoniker": "Assets\\Models\\RewardProfile.cs",
@@ -543,7 +560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "StudentModel.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Models\\StudentModel.cs",
               "RelativeDocumentMoniker": "Assets\\Models\\StudentModel.cs",
@@ -555,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "Google.IOSResolver.dll",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\ExternalDependencyManager\\Editor\\1.2.186\\Google.IOSResolver.dll",
               "RelativeDocumentMoniker": "Assets\\ExternalDependencyManager\\Editor\\1.2.186\\Google.IOSResolver.dll",
@@ -566,7 +583,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "Firebase.Editor.dll - 1 [Neutre] - Version",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Firebase\\Editor\\Firebase.Editor.dll",
               "RelativeDocumentMoniker": "Assets\\Firebase\\Editor\\Firebase.Editor.dll",
@@ -578,7 +595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "UserDataDisplay.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\UserDataDisplay.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\UserDataDisplay.cs",
@@ -590,7 +607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "XRGeneralSettingsPerBuildTarget.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Library\\PackageCache\\com.unity.xr.management@3126858600e6\\Editor\\XRGeneralSettingsPerBuildTarget.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.xr.management@3126858600e6\\Editor\\XRGeneralSettingsPerBuildTarget.cs",
@@ -602,7 +619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "cameraPermission.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Authuntication\\Scripts\\cameraPermission.cs",
               "RelativeDocumentMoniker": "Assets\\Authuntication\\Scripts\\cameraPermission.cs",
@@ -614,7 +631,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "StandaloneEasyReaderSample.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Authuntication\\Scripts\\StandaloneEasyReaderSample.cs",
               "RelativeDocumentMoniker": "Assets\\Authuntication\\Scripts\\StandaloneEasyReaderSample.cs",
@@ -625,7 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "StandaloneEasyReaderSample.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Authuntication\\StandaloneEasyReaderSample.cs",
               "RelativeDocumentMoniker": "Assets\\Authuntication\\StandaloneEasyReaderSample.cs",

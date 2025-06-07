@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using Firebase.Extensions;
+using UnityEngine.SceneManagement;
 
 using Firebase.Database;
 
@@ -100,6 +101,8 @@ public class targetHandler : MonoBehaviour
             Time.timeScale = 0f;
 
             ScoreDeliveringRef.deliverScore(lastScore);
+
+            SceneManager.LoadScene(4);
 
         }
     }
