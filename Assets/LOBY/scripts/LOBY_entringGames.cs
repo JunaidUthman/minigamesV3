@@ -60,7 +60,7 @@ public class entringGames : MonoBehaviour
         }
         else if (planet1Button)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(5);
         }
         else if (planet2Button)
         {
@@ -72,20 +72,17 @@ public class entringGames : MonoBehaviour
     {
         if (other.gameObject.name == "planet1")
         {
-            //planet1ButtonCanvas.SetActive(false);
-            Debug.Log("kanchof wach lprobleme men OntriggerExit2D dyal lplanet");
+            planet1ButtonCanvas.SetActive(false);
 
         }
         else if (other.gameObject.name == "planet2")
         {
-            //planet2ButtonCanvas.SetActive(false);
-            Debug.Log("kanchof wach lprobleme men OntriggerExit2D dyal lplanet");
+            planet2ButtonCanvas.SetActive(false);
 
         }
         else if (other.gameObject.name == "galaxy")
         {
-            //galaxyButtonCanvas.SetActive(false);
-            Debug.Log("kanchof wach lprobleme men OntriggerExit2D dyal lplanet");
+            galaxyButtonCanvas.SetActive(false);
 
         }
     }
