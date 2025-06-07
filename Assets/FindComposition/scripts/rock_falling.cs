@@ -29,6 +29,7 @@ public class rock_falling : MonoBehaviour
 
         int index = UnityEngine.Random.Range(0, rockmvt.RightdivisionCompositions.Count);
 
+       
         rightAnswers = rockmvt.RightdivisionCompositions;
         wrongAnswers = rockmvt.WrongdivisionCompositions;
 

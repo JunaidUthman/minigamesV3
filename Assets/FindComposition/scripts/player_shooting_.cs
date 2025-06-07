@@ -13,7 +13,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
 
         cooldownTimer -= Time.deltaTime; ;
-        if ((Input.GetButton("Fire1") || shoot) && cooldownTimer <= 0 )
+        if (shoot && cooldownTimer <= 0 )
         {
             Vector3 offset = transform.rotation * new Vector3(0, 0.5f, 0);
             Instantiate(bullet, transform.position + offset, transform.rotation);

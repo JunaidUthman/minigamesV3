@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 1600565529048585040}
   - component: {fileID: 2514431901551771405}
   - component: {fileID: 3515083140928996084}
+  - component: {fileID: 5259059972825606551}
+  - component: {fileID: 1751966713462823799}
   - component: {fileID: 90928617104082564}
   m_Layer: 8
   m_Name: player_ship
@@ -539,8 +541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a30f392b0a41a441a47b55a89fa2d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
   score: 0
+  scoreText: {fileID: 0}
 --- !u!114 &3515083140928996084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,6 +553,51 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1279444ea5cd8c142bca2d24159530f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartButton: {fileID: 0}
+  exitButton: {fileID: 0}
+  gameOverButton: {fileID: 0}
+--- !u!114 &5259059972825606551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826609340679899488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2748d694e166b474faa447589db89650, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1751966713462823799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826609340679899488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000f80849ca366447bb7e2c0f12838b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &90928617104082564

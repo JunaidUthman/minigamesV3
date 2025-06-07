@@ -14,8 +14,8 @@ public class rockMovement : MonoBehaviour
 
 
     int target;
-    int maxRange = 10;
-    int minCompositions = 7;
+    int maxRange = GameConfigManager.Instance.findComposition.maxNumberRange;
+    int minCompositions = GameConfigManager.Instance.findComposition.numComposition;
 
     public int[] targets;
 
@@ -24,12 +24,23 @@ public class rockMovement : MonoBehaviour
 
     void Start()
     {
+        if (GameConfigManager.Instance != null)
+        {
+            Debug.Log("linstance de GameConfigManager est  differante de null");
+        }
+
+
+        //Debug.Log("the maxCompo given from the db is " + maxRange);
+        //Debug.Log("the minCompositions given from the db is " + minCompositions);
         targets = generateTargets(maxRange);
         target = targets[0];
 
         timeBeforeInstantiantion = 1f;
 
+        Debug.Log("generating the answers of the rigth rock");
         RightdivisionCompositions = DivisionCompositionGenerator.GenerateRightDivisionCompositionsAsText(target, maxRange, minCompositions);
+
+        Debug.Log("generating the answers of the wro,g rock");
         WrongdivisionCompositions = DivisionCompositionGenerator.GenerateWrongDivisionCompositionsAsText(target, maxRange -1, minCompositions);
 
         targetText.text = "target :"+target;
@@ -49,12 +60,13 @@ public class rockMovement : MonoBehaviour
 
     void generateRock()
     {
+        Debug.Log("generating the rocks have just bigen");
         float randomX = Random.Range(0.2f, 0.8f);
 
         int number = UnityEngine.Random.Range(1, 3);
         if (number == 1)
         {
-            
+            Debug.Log("rigth wrok generated");
 
             Vector3 spawnPoint = Camera.main.ViewportToWorldPoint(new Vector3(randomX, 1f, Mathf.Abs(Camera.main.transform.position.z)));
             spawnPoint.y += 2;
@@ -62,8 +74,8 @@ public class rockMovement : MonoBehaviour
         }
         else if (number == 2)
         {
-            
 
+            Debug.Log("wrong wrok generated");
             Vector3 spawnPoint = Camera.main.ViewportToWorldPoint(new Vector3(randomX, 1f, Mathf.Abs(Camera.main.transform.position.z)));
             spawnPoint.y += 2;
             GameObject newRock = Instantiate(WrongRock, spawnPoint, Quaternion.identity);

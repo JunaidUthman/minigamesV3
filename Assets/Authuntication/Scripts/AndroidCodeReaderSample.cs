@@ -1,9 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using ZXing;
 using System.Collections;
 using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
+using UnityEngine.SceneManagement;
 
 public class StandaloneEasyReaderSample : MonoBehaviour
 {
@@ -151,63 +152,164 @@ public class StandaloneEasyReaderSample : MonoBehaviour
             yield break;
         }
 
-        DataSnapshot testsSnapshot = testsRequest.Result;
-        bool found = false;
-
-        foreach (var test in testsSnapshot.Children)
-        {
-            var group1 = test.Child("groups").Child("group_1");
-            var studentList = group1.Child("students");
-
-            foreach (var student in studentList.Children)
-            {
-                if (student.Value.ToString() == scannedUid)
-                {
-                    Debug.Log("Found matching test: " + test.Key);
-                    lastResult = "Matched test: " + test.Key;
-
-                    // Store user and test ID
-                    if (PlayerGlobalData.Instance != null)
-                    {
-                        PlayerGlobalData.Instance.id = scannedUid;
-                        PlayerGlobalData.Instance.testId = test.Key;
-                    }
-
-                    // Save game configuration
-                    var games = group1.Child("configuredGames");
-                    GameConfigManager.Instance.findComposition = ExtractGameConfig(games.Child("find_compositions"));
-                    GameConfigManager.Instance.chooseAnswer = ExtractGameConfig(games.Child("choose_answer"));
-                    GameConfigManager.Instance.verticalOperations = ExtractGameConfig(games.Child("vertical_operations"));
-
-                    found = true;
-                    hasScannedSuccessfully = true;
-                    break;
-                }
-            }
-
-            if (found) break;
-        }
-
-        if (!found)
+        var matchedTest = FindMatchingTestForStudent(testsRequest.Result, scannedUid);
+        if (matchedTest == null)
         {
             lastResult = "User not found in any test.";
-            Debug.LogWarning(lastResult);
+            isProcessing = false;
+            yield break;
         }
+
+        var (testId, testSnapshot) = matchedTest.Value;
+
+        DataSnapshot groupSnapshot = testSnapshot.Child("groups").Child("group_1");
+
+        yield return InitializeGlobalData(scannedUid, testId, testSnapshot);
+        StoreGameConfig(groupSnapshot);
+        Debug.Log("the StoreGameConfig is cdone wooooooooooooooooooooooow!!!");
+        yield return StorePlayerProfile(scannedUid);
+        Debug.Log("player profile is stored");
+
+        hasScannedSuccessfully = true;
+        camTexture.Stop();
+        camTexture = null;
+        Destroy(gameObject);
+        Debug.Log("the game is about to switch to scean 1");
+        SceneManager.LoadScene(1);
 
         isProcessing = false;
     }
 
+    private (string, DataSnapshot)? FindMatchingTestForStudent(DataSnapshot testsSnapshot, string scannedUid)
+    {
+        foreach (var test in testsSnapshot.Children)
+        {
+            string testState = test.Child("state").Value?.ToString();
+            if (testState != "published") continue;
+
+            var students = test.Child("groups").Child("group_1").Child("students");
+            foreach (var student in students.Children)
+            {
+                if (student.Value?.ToString() == scannedUid)
+                {
+                    Debug.Log("Found matching test: " + test.Key);
+                    lastResult = "Matched test: " + test.Key;
+                    return (test.Key, test);
+                }
+            }
+        }
+
+        return null;
+    }
+
+
+    private IEnumerator InitializeGlobalData(string uid, string testId, DataSnapshot testSnapshot)
+    {
+        if (PlayerGlobalData.Instance == null)
+        {
+            GameObject prefab = Resources.Load<GameObject>("Prefabs/PlayerGlobalData");
+            if (prefab != null) Instantiate(prefab);
+            yield return null;
+        }
+
+        if (TimeManager.Instance == null)
+        {
+            GameObject timePrefab = Resources.Load<GameObject>("Prefabs/TimeManager");
+            if (timePrefab != null) Instantiate(timePrefab);
+            yield return null;
+        }
+
+        PlayerGlobalData.Instance.id = uid;
+        PlayerGlobalData.Instance.testId = testId;
+
+        if (float.TryParse(testSnapshot.Child("duration").Value?.ToString(), out float duration))
+        {
+            PlayerGlobalData.Instance.gameDuration = duration;
+            TimeManager.Instance.StartTimer(duration * 60f);
+            Debug.Log("Stored player duration: " + duration);
+        }
+    }
+
+    private IEnumerator StorePlayerProfile(string uid)
+    {
+        var userRequest = FirebaseManager.Instance.DbReference.Child("users").Child(uid).GetValueAsync();
+        yield return new WaitUntil(() => userRequest.IsCompleted);
+
+        if (userRequest.Exception != null)
+        {
+            Debug.LogError("Failed to fetch user data: " + userRequest.Exception);
+            yield break;
+        }
+
+        var profile = userRequest.Result.Child("playerProfile");
+
+        int.TryParse(profile.Child("coins").Value?.ToString(), out int coins);
+        int.TryParse(profile.Child("mathLevel").Value?.ToString(), out int mathLevel);
+        int.TryParse(profile.Child("score").Value?.ToString(), out int score);
+
+        PlayerGlobalData.Instance.coins = coins;
+        PlayerGlobalData.Instance.mathLevel = mathLevel;
+        PlayerGlobalData.Instance.score = score;
+    }
+
+    private void StoreGameConfig(DataSnapshot groupSnapshot)
+    {
+        Debug.Log("StoreGameConfig started.");
+
+        if (GameConfigManager.Instance == null)
+        {
+            Debug.Log("GameConfig is null");
+
+            GameObject prefab = Resources.Load<GameObject>("Prefabs/GameConfigManager");
+            if (prefab != null) Instantiate(prefab);
+            return;
+        }
+
+        var games = groupSnapshot.Child("configuredGames");
+
+        if (games == null || !games.Exists)
+        {
+            Debug.LogError("configuredGames not found in Firebase.");
+            return;
+        }
+
+        GameConfigManager.Instance.findComposition = ExtractGameConfig(games.Child("find_compositions"));
+        GameConfigManager.Instance.chooseAnswer = ExtractGameConfig(games.Child("choose_answer"));
+        GameConfigManager.Instance.verticalOperations = ExtractGameConfig(games.Child("vertical_operations"));
+
+        Debug.Log("Stored all game configurations.");
+    }
+
+
+
+
     private GameConfig ExtractGameConfig(DataSnapshot snapshot)
     {
-        var config = new GameConfig
+        if (snapshot == null || !snapshot.Exists)
         {
-            maxNumberRange = int.Parse(snapshot.Child("maxNumberRange").Value.ToString()),
-            numOperations = int.Parse(snapshot.Child("numOperations").Value.ToString()),
-            order = int.Parse(snapshot.Child("order").Value.ToString()),
-            requiredCorrectAnswersMinimumPercent = int.Parse(snapshot.Child("requiredCorrectAnswersMinimumPercent").Value.ToString())
-        };
+            Debug.LogError("GameConfig snapshot is null or does not exist: " + snapshot?.Key);
+            return null;
+        }
 
-        Debug.Log("Game config loaded: " + snapshot.Key);
-        return config;
+        try
+        {
+            var config = new GameConfig
+            {
+                maxNumberRange = int.Parse(snapshot.Child("maxNumberRange").Value?.ToString() ?? "0"),
+                numOperations = int.Parse(snapshot.Child("numOperations").Value?.ToString() ?? "0"),
+                numComposition = int.Parse(snapshot.Child("numComposition").Value?.ToString() ?? "0"),
+                order = int.Parse(snapshot.Child("order").Value?.ToString() ?? "0"),
+                requiredCorrectAnswersMinimumPercent = int.Parse(snapshot.Child("requiredCorrectAnswersMinimumPercent").Value?.ToString() ?? "0")
+            };
+
+            Debug.Log("Game config loaded successfully for: " + snapshot.Key);
+            return config;
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Failed to parse game config for: " + snapshot.Key + " - " + e.Message);
+            return null;
+        }
     }
+
 }
