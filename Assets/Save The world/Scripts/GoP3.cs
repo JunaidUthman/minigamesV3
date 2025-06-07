@@ -26,47 +26,95 @@ public class GoP3 : MonoBehaviour
         GenerateProblem();
     }
 
+
     void GenerateProblem()
     {
         // Nettoyer les dropzones précédentes
         //ClearAllDropZones();
 
-        // Générer une division simple
-        int diviseur = Random.Range(2, 15); // diviseur simple
+        // ÉTAPE 1: Générer les composants de base de manière cohérente
+        int diviseur = Random.Range(3, 12); // Diviseur entre 3 et 11
 
-        int factor1 = Random.Range(4, 15);  // multiple 1
-        int factor2 = Random.Range(2, 10);  // multiple 2
+        // Générer deux chiffres pour le quotient (pour avoir 2 soustractions)
+        int chiffre1 = Random.Range(2, 9); // Premier chiffre du quotient
+        int chiffre2 = Random.Range(1, 9); // Deuxième chiffre du quotient
+        int quotient = chiffre1 * 10 + chiffre2; // Quotient à 2 chiffres
 
-        int produit1 = diviseur * factor1;
-        int produit2 = diviseur * factor2;
+        // Générer le reste final (doit être < diviseur)
+        int resteFinal = Random.Range(0, diviseur);
 
-        int quotient = factor1 + factor2;
+        // ÉTAPE 2: Calculer le dividende de base
+        int dividendeBase = quotient * diviseur + resteFinal;
 
-        int reste = Random.Range(0, diviseur); // peut être 0 ou plus, mais < diviseur
+        // ÉTAPE 3: Déterminer les éléments de la division verticale
+        // Premier chiffre du quotient * diviseur = première soustraction
+        int soustr1 = chiffre1 * 10 * diviseur; // Ce qu'on soustrait en premier
 
-        int dividu = produit1 + produit2 + reste;
+        // Calculer ce qui reste après la première soustraction
+        int resteApres1 = dividendeBase - soustr1;
 
-        // Assignation aux champs TMP_Text
-        diviseurText.text = diviseur.ToString();
-        dividendeText.text = dividu.ToString();
-        quotientText.text = quotient.ToString();
-        resteText.text = reste.ToString();
-
-        soustr1Text.text = produit1.ToString(); // première soustraction
-        soustrResultText.text = (dividu - produit1).ToString(); // reste intermédiaire
-        soustr2Text.text = produit2.ToString(); // deuxième soustraction
-
-        // 3 champs à cacher 
-        List<TMP_Text> availableFields = new List<TMP_Text>
+        // S'assurer que le reste après la première soustraction est valide
+        if (resteApres1 < 0)
         {
-            quotientText,
-            resteText,
-            soustr1Text,
-            soustrResultText,
-            soustr2Text
-        };
+            // Réajuster si nécessaire
+            chiffre1 = Random.Range(1, (dividendeBase / (diviseur * 10)) + 1);
+            quotient = chiffre1 * 10 + chiffre2;
+            soustr1 = chiffre1 * 10 * diviseur;
+            resteApres1 = dividendeBase - soustr1;
+            dividendeBase = quotient * diviseur + resteFinal; // Recalculer
+            resteApres1 = dividendeBase - soustr1;
+        }
 
-        //Mélanger la liste
+        // Deuxième soustraction = chiffre2 * diviseur
+        int soustr2 = chiffre2 * diviseur;
+
+        // Vérification finale et ajustement si nécessaire
+        if (resteApres1 < soustr2)
+        {
+            // Régénérer avec des valeurs plus petites
+            chiffre1 = Random.Range(2, 6);
+            chiffre2 = Random.Range(1, 6);
+            quotient = chiffre1 * 10 + chiffre2;
+            resteFinal = Random.Range(0, diviseur);
+            dividendeBase = quotient * diviseur + resteFinal;
+            soustr1 = chiffre1 * 10 * diviseur;
+            soustr2 = chiffre2 * diviseur;
+            resteApres1 = dividendeBase - soustr1;
+        }
+
+        // ÉTAPE 4: Calculs finaux
+        int dividende = dividendeBase;
+        int resteApresDeuxieme = resteApres1 - soustr2; // Doit égaler resteFinal
+
+        // Vérification mathématique complète
+        Debug.Log($"Vérification: {dividende} ÷ {diviseur} = {quotient} reste {resteApresDeuxieme}");
+        Debug.Log($"Première soustraction: {dividende} - {soustr1} = {resteApres1}");
+        Debug.Log($"Deuxième soustraction: {resteApres1} - {soustr2} = {resteApresDeuxieme}");
+
+        // ÉTAPE 5: Assignation aux champs de texte
+        diviseurText.text = diviseur.ToString();
+        dividendeText.text = dividende.ToString();
+        quotientText.text = quotient.ToString();
+        resteText.text = resteApresDeuxieme.ToString();
+
+        // Éléments de première soustraction
+        soustr1Text.text = soustr1.ToString();
+        soustrResultText.text = resteApres1.ToString(); // Résultat après première soustraction
+
+        // Élément de deuxième soustraction
+        soustr2Text.text = soustr2.ToString();
+
+        // ÉTAPE 6: Sélectionner 4 champs à cacher
+        List<TMP_Text> availableFields = new List<TMP_Text>
+    {
+        quotientText,
+        resteText,
+        soustr1Text,
+        soustrResultText,
+        soustr2Text
+    };
+
+        // Mélanger la liste
         for (int i = 0; i < availableFields.Count; i++)
         {
             TMP_Text temp = availableFields[i];
@@ -75,7 +123,7 @@ public class GoP3 : MonoBehaviour
             availableFields[randomIndex] = temp;
         }
 
-        // Prendre les 3 premiers pour les cacher
+        // Prendre les 4 premiers pour les cacher
         for (int i = 0; i < 4; i++)
         {
             string correctValue = availableFields[i].text;
