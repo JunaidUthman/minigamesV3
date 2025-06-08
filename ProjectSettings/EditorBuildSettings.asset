@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/saveTheWorldMenue/sceans/Levels.unity
     guid: beac2d9b278109741a9dccd649dc9202
+  - enabled: 1
+    path: Assets/astronaut/Scenes/astronaut.unity
+    guid: 73f1fa509ca314943bf179e36ffb27fe
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 260e18ee6682edd4a9bbf917e3f164a8, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

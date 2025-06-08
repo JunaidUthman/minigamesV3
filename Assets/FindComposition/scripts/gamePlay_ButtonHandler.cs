@@ -25,7 +25,7 @@ public class gamePlay_ButtonHandler : MonoBehaviour
     {
         Time.timeScale = 1f;
         ScoreDeliveringRef.deliverScore(ScoreHandlerRef.score);
-        SceneManager.LoadSceneAsync(3);
+        SceneManager.LoadSceneAsync(1);
     }
 
     public void pause()

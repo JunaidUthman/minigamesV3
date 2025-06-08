@@ -11,12 +11,14 @@ public class GameConfigManager : MonoBehaviour
     public GameConfig verticalOperations;
 
     public int findCompositionScore;
-    public int chooseAnswerScore;
-    public int verticalOperationsScore;
+    public int chooseAnswerScore = 10;
+    public int verticalOperationsScore= 5;
 
     private void Awake()
     {
-        if (Instance != null) { Destroy(gameObject); return; }
+        if (Instance != null) {
+            Debug.Log("iwaaaa chi hed ra mkhdem had linstance");
+            Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }

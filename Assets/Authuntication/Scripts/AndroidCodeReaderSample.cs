@@ -64,6 +64,8 @@ public class StandaloneEasyReaderSample : MonoBehaviour
             return;
 
         camTexture.GetPixels32(cameraColorData);
+        Debug.Log($"Decode input array size: {cameraColorData.Length} ({width}x{height})");
+
         result = barcodeReader.Decode(cameraColorData, width, height);
 
         if (result != null)
@@ -72,6 +74,10 @@ public class StandaloneEasyReaderSample : MonoBehaviour
             string scannedId = result.Text;
             Debug.Log("Scanned QR code: " + scannedId);
             StartCoroutine(CheckTestInFirebase(scannedId));
+        }
+        else
+        {
+            Debug.Log("there is no result");
         }
     }
 
@@ -299,7 +305,7 @@ public class StandaloneEasyReaderSample : MonoBehaviour
                 numOperations = int.Parse(snapshot.Child("numOperations").Value?.ToString() ?? "0"),
                 numComposition = int.Parse(snapshot.Child("numComposition").Value?.ToString() ?? "0"),
                 order = int.Parse(snapshot.Child("order").Value?.ToString() ?? "0"),
-                requiredCorrectAnswersMinimumPercent = int.Parse(snapshot.Child("requiredCorrectAnswersMinimumPercent").Value?.ToString() ?? "0")
+                requiredCorrectAnswersMinimumPercent = int.Parse(snapshot.Child("requiredCorrectAnswers").Value?.ToString() ?? "0")
             };
 
             Debug.Log("Game config loaded successfully for: " + snapshot.Key);

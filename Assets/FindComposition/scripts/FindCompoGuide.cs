@@ -3,36 +3,38 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class GuideManager : MonoBehaviour
+public class FindCompoGuide : MonoBehaviour
 {
     public GameObject guidePanel;
     public TextMeshProUGUI guideText;
     public Button nextButton;
     public Image guideImage;
-    public GameObject miniMap;
     public GameObject ExitButton;
+    public GameObject menueButtons;
 
     private int currentIndex = 0;
 
     private string[] messages = new string[]
     {
-        "Welcome, explorer!",
-        "Do you want to play some games?",
-        "Fly to one of the planets to begin!",
-        "Good luck and have fun!"
+    "Here you go!!",
+    "Hit matching rocks to score points.",
+    "You have 3 engines. A wrong hit costs one.",
+    "Lose all engines = restart.",
+    "Good luck!"
     };
 
-    public Sprite[] guideImages; 
+
+    public Sprite[] guideImages;
 
     void Start()
     {
-        miniMap.SetActive(false);
+        menueButtons.SetActive(false);
         ExitButton.SetActive(true);
         guidePanel.SetActive(true);
         guideText.text = messages[currentIndex];
-        guideImage.sprite = guideImages[currentIndex]; 
+        guideImage.sprite = guideImages[currentIndex];
         nextButton.onClick.AddListener(ShowNextMessage);
-        Time.timeScale = 0f; 
+        Time.timeScale = 0f;
     }
 
     void ShowNextMessage()
@@ -47,7 +49,7 @@ public class GuideManager : MonoBehaviour
         {
             guidePanel.SetActive(false);
             ExitButton.SetActive(false);
-            miniMap.SetActive(true);
+            menueButtons.SetActive(true);
             Time.timeScale = 1f;
         }
     }
@@ -55,8 +57,8 @@ public class GuideManager : MonoBehaviour
     public void OnExitClicked()
     {
         guidePanel.SetActive(false);
-        miniMap.SetActive(true);
         ExitButton.SetActive(false);
+        menueButtons.SetActive(true);
         Time.timeScale = 1f;
     }
 }

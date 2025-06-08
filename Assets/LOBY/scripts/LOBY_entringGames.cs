@@ -56,7 +56,7 @@ public class entringGames : MonoBehaviour
     {
         if (galaxyButton)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(7);
         }
         else if (planet1Button)
         {

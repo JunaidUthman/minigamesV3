@@ -3,36 +3,40 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class GuideManager : MonoBehaviour
+public class saveWorldGuide : MonoBehaviour
 {
     public GameObject guidePanel;
     public TextMeshProUGUI guideText;
     public Button nextButton;
     public Image guideImage;
-    public GameObject miniMap;
     public GameObject ExitButton;
+    public GameObject menueButtons;
+    public GameObject timeButtons;
 
     private int currentIndex = 0;
 
     private string[] messages = new string[]
     {
-        "Welcome, explorer!",
-        "Do you want to play some games?",
-        "Fly to one of the planets to begin!",
-        "Good luck and have fun!"
+    "Here you go!",
+    "You have plenty of operations to solve.",
+    "If you solve one, you can move on to the next.",
+    "Each operation you solve will increase your score.",
+    "Good luck!"
     };
 
-    public Sprite[] guideImages; 
+
+    public Sprite[] guideImages;
 
     void Start()
     {
-        miniMap.SetActive(false);
+        menueButtons.SetActive(false);
         ExitButton.SetActive(true);
         guidePanel.SetActive(true);
+        timeButtons.SetActive(false);
         guideText.text = messages[currentIndex];
-        guideImage.sprite = guideImages[currentIndex]; 
+        guideImage.sprite = guideImages[currentIndex];
         nextButton.onClick.AddListener(ShowNextMessage);
-        Time.timeScale = 0f; 
+        Time.timeScale = 0f;
     }
 
     void ShowNextMessage()
@@ -47,7 +51,7 @@ public class GuideManager : MonoBehaviour
         {
             guidePanel.SetActive(false);
             ExitButton.SetActive(false);
-            miniMap.SetActive(true);
+            menueButtons.SetActive(true);
             Time.timeScale = 1f;
         }
     }
@@ -55,8 +59,9 @@ public class GuideManager : MonoBehaviour
     public void OnExitClicked()
     {
         guidePanel.SetActive(false);
-        miniMap.SetActive(true);
         ExitButton.SetActive(false);
+        menueButtons.SetActive(true);
+        timeButtons.SetActive(true);
         Time.timeScale = 1f;
     }
 }

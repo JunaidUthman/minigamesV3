@@ -21,7 +21,7 @@ public class player_damage : MonoBehaviour
     private float coloringTime = 0f;
 
     //======Health points =================
-    private int healhPoints = 2;
+    private int healhPoints = 3;
     public GameObject heartPrefab; // Drag your heart prefab here
     public Transform heartsParent;
 
