@@ -56,7 +56,7 @@ public class entringGames : MonoBehaviour
     {
         if (galaxyButton)
         {
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene(8);
         }
         else if (planet1Button)
         {
@@ -70,20 +70,17 @@ public class entringGames : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.name == "planet1")
+        if (other.gameObject.name == "planet1" && planet1ButtonCanvas != null)
         {
             planet1ButtonCanvas.SetActive(false);
-
         }
-        else if (other.gameObject.name == "planet2")
+        else if (other.gameObject.name == "planet2" && planet2ButtonCanvas != null)
         {
             planet2ButtonCanvas.SetActive(false);
-
         }
-        else if (other.gameObject.name == "galaxy")
+        else if (other.gameObject.name == "galaxy" && galaxyButtonCanvas != null)
         {
             galaxyButtonCanvas.SetActive(false);
-
         }
     }
 

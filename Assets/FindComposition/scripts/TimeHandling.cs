@@ -3,7 +3,16 @@ using TMPro;
 
 public class TimeHandling : MonoBehaviour
 {
-    public TextMeshProUGUI timerText; // Drag the TextMeshProUGUI from your Canvas here
+    public TextMeshProUGUI timerText;
+
+    private Score_Handling ScoreHandlerRef;
+    private ScoreDelivering ScoreDeliveringRef;
+
+    void Start()
+    {
+        ScoreHandlerRef = GameObject.Find("player_ship").GetComponent<Score_Handling>();
+        ScoreDeliveringRef = GameObject.Find("player_ship").GetComponent<ScoreDelivering>();
+    }
 
     void Update()
     {
@@ -15,6 +24,12 @@ public class TimeHandling : MonoBehaviour
             int minutes = Mathf.FloorToInt(t / 60f);
             int seconds = Mathf.FloorToInt(t % 60f);
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+            if (t <=0 )
+            {
+                int lastScore = ScoreHandlerRef.score;
+                ScoreDeliveringRef.deliverScore(lastScore);
+            }
         }
     }
 }

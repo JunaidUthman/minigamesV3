@@ -4619,7 +4619,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3949765239347250633, guid: 955e1b10775ab7a4dbb6546702a9aa06, type: 3}
   m_PrefabInstance: {fileID: 1304241045}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2082757327}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f10a21addd197444eb9c5481a73e1125, type: 3}
@@ -4630,7 +4630,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 578758712935538796, guid: 955e1b10775ab7a4dbb6546702a9aa06, type: 3}
   m_PrefabInstance: {fileID: 1304241045}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2082757327}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5356f1d47ddf30488867f3db18478af, type: 3}
@@ -4738,6 +4738,11 @@ RectTransform:
   m_AnchoredPosition: {x: 274, y: 103.833336}
   m_SizeDelta: {x: 548, y: 207.66667}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2082757327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8826609340679899488, guid: 955e1b10775ab7a4dbb6546702a9aa06, type: 3}
+  m_PrefabInstance: {fileID: 1304241045}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2088741197
 GameObject:
   m_ObjectHideFlags: 0
@@ -4802,6 +4807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e7faad341e26c4a9b0c75406a06a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2082757327}
   targetText: {fileID: 1702569119}
   rigthLeftButtons: {fileID: 661805412}
   shootingButton: {fileID: 877131237}

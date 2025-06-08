@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/astronaut/Scenes/astronaut.unity
     guid: 73f1fa509ca314943bf179e36ffb27fe
+  - enabled: 1
+    path: Assets/astrunautMenue/sceans/astrunautMenueScean.unity
+    guid: 2e16e47784b176b43bcc188e3e0e0df3
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 260e18ee6682edd4a9bbf917e3f164a8, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

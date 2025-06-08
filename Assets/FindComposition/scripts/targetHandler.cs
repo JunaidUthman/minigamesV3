@@ -13,6 +13,8 @@ public class targetHandler : MonoBehaviour
     private rockMovement RockMovementRef;
     private rock_falling RockFallingRef;
 
+    public GameObject player;
+
     private ScoreDelivering ScoreDeliveringRef;
 
     int maxRange =  GameConfigManager.Instance.findComposition.maxNumberRange;
@@ -100,7 +102,7 @@ public class targetHandler : MonoBehaviour
 
         //    targetText.text = "target :" + newTarget;
         //}
-        if (ScoreHandlerRef.score == 10 && !hasDeliveredScore)
+        if (ScoreHandlerRef.score == 1 && !hasDeliveredScore)
         {
             hasDeliveredScore = true;
 
@@ -109,6 +111,7 @@ public class targetHandler : MonoBehaviour
 
             rigthLeftButtons.SetActive(false);
             shootingButton.SetActive(false);
+            player.SetActive(false);
             CongratsText.SetActive(true);
 
             // Start coroutine to delay scene change
