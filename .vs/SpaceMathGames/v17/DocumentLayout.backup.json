@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Firebase\\Plugins\\Firebase.Platform.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Firebase\\Plugins\\Firebase.Platform.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Firebase\\GameConfigSingletons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\ScoreDelivering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\FindComposition\\scripts\\ScoreDelivering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\ScoreDelivering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\FindComposition\\scripts\\ScoreDelivering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Firebase\\Plugins\\Firebase.Platform.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Firebase\\Plugins\\Firebase.Platform.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\targetHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -198,11 +198,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Firebase.Platform.dll",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Firebase\\Plugins\\Firebase.Platform.dll",
               "RelativeDocumentMoniker": "Assets\\Firebase\\Plugins\\Firebase.Platform.dll",
@@ -213,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "ScoreDelivering.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\ScoreDelivering.cs",
               "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\ScoreDelivering.cs",
@@ -232,20 +232,20 @@
               "RelativeDocumentMoniker": "Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs",
               "ToolTip": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs",
               "RelativeToolTip": "Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD8AAABwAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAD8AAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T21:32:47.307Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GameConfigSingletons.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
               "ToolTip": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
               "RelativeToolTip": "Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAwA0AAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T19:03:16.193Z",
               "EditorCaption": ""
@@ -260,8 +260,7 @@
               "RelativeToolTip": "Assets\\FindComposition\\scripts\\TimeHandling.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T15:53:12.947Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T15:53:12.947Z"
             },
             {
               "$type": "Document",
@@ -273,8 +272,7 @@
               "RelativeToolTip": "Assets\\FindComposition\\scripts\\targetHandler.cs",
               "ViewState": "AgIAAF0AAAAAAAAAAAAAAGQAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T15:49:02.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T15:49:02.543Z"
             },
             {
               "$type": "Document",
@@ -286,8 +284,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Firebase\\TimeManager.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAC8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T15:54:15.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T15:54:15.829Z"
             },
             {
               "$type": "Document",
@@ -299,8 +296,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Firebase\\FirebaseManager.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T11:56:19.447Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T11:56:19.447Z"
             },
             {
               "$type": "Document",
@@ -312,8 +308,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Firebase\\PlayerGlobalData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T18:40:29.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T18:40:29.162Z"
             },
             {
               "$type": "Document",
@@ -325,8 +320,7 @@
               "RelativeToolTip": "Assets\\FindComposition\\scripts\\Score_Handling.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T23:47:27.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T23:47:27.529Z"
             },
             {
               "$type": "Document",
@@ -338,8 +332,7 @@
               "RelativeToolTip": "Assets\\Authuntication\\Scripts\\AndroidCodeReaderSample.cs",
               "ViewState": "AgIAAKQAAAAAAAAAAAAAADABAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T11:50:41.506Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T11:50:41.506Z"
             },
             {
               "$type": "Document",
@@ -351,8 +344,7 @@
               "RelativeToolTip": "Assets\\FindComposition\\scripts\\Menue_ShooterbuttonHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T20:04:03.444Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T20:04:03.444Z"
             },
             {
               "$type": "Document",
@@ -364,8 +356,7 @@
               "RelativeToolTip": "Assets\\saveTheWorldMenue\\scripts\\saveWorldGuide.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T21:08:05.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T21:08:05.242Z"
             },
             {
               "$type": "Document",
@@ -377,8 +368,7 @@
               "RelativeToolTip": "Assets\\FindComposition\\scripts\\FindCompoGuide.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T15:01:29.348Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T15:01:29.348Z"
             },
             {
               "$type": "Document",
@@ -390,8 +380,7 @@
               "RelativeToolTip": "Assets\\LOBY\\scripts\\LOBY_entringGames.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAAIwDoAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T19:41:28.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T19:41:28.467Z"
             },
             {
               "$type": "Document",
@@ -439,8 +428,7 @@
               "RelativeToolTip": "Assets\\FindComposition\\scripts\\gamePlay_ButtonHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T20:06:19.403Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T20:06:19.403Z"
             },
             {
               "$type": "Document",
@@ -464,8 +452,7 @@
               "RelativeToolTip": "Assets\\FindComposition\\scripts\\backgrounf_movement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T20:10:55.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T20:10:55.625Z"
             },
             {
               "$type": "Document",

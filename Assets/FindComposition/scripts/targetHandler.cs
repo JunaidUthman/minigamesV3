@@ -30,6 +30,8 @@ public class targetHandler : MonoBehaviour
     private bool level3 = false;
     private bool level4 = false;
 
+    private bool hasDeliveredScore = false;
+
     public GameObject rigthLeftButtons;
     public GameObject shootingButton;
     public GameObject CongratsText;
@@ -98,9 +100,9 @@ public class targetHandler : MonoBehaviour
 
         //    targetText.text = "target :" + newTarget;
         //}
-        if (ScoreHandlerRef.score == 10)
+        if (ScoreHandlerRef.score == 10 && !hasDeliveredScore)
         {
-            int lastScore = ScoreHandlerRef.score;
+            hasDeliveredScore = true;
 
             // Pause the game
             Time.timeScale = 0f;
@@ -108,8 +110,6 @@ public class targetHandler : MonoBehaviour
             rigthLeftButtons.SetActive(false);
             shootingButton.SetActive(false);
             CongratsText.SetActive(true);
-
-            ScoreDeliveringRef.deliverScore(lastScore);
 
             // Start coroutine to delay scene change
             StartCoroutine(LoadSceneAfterDelay());
@@ -119,7 +119,10 @@ public class targetHandler : MonoBehaviour
 
     private System.Collections.IEnumerator LoadSceneAfterDelay()
     {
+        int lastScore = ScoreHandlerRef.score;
+        ScoreDeliveringRef.deliverScore(lastScore);
         yield return new WaitForSecondsRealtime(3f);
+       
         SceneManager.LoadScene(1);
     }
 

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Firebase\\GameConfigSingletons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\ScoreDelivering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\FindComposition\\scripts\\ScoreDelivering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Firebase\\GameConfigSingletons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -198,8 +198,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ScoreDelivering.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\ScoreDelivering.cs",
+              "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\ScoreDelivering.cs",
+              "ToolTip": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\ScoreDelivering.cs",
+              "RelativeToolTip": "Assets\\FindComposition\\scripts\\ScoreDelivering.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAE0AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T22:04:47.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameConfigSingletons.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
+              "ToolTip": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T19:03:16.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "targetHandler.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\targetHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\targetHandler.cs",
+              "ToolTip": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\targetHandler.cs",
+              "RelativeToolTip": "Assets\\FindComposition\\scripts\\targetHandler.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAG8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T15:49:02.543Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -213,41 +252,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ScoreDelivering.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\ScoreDelivering.cs",
-              "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\ScoreDelivering.cs",
-              "ToolTip": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\ScoreDelivering.cs",
-              "RelativeToolTip": "Assets\\FindComposition\\scripts\\ScoreDelivering.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAE4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T22:04:47.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "EndGame_mathLevelManager.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs",
               "RelativeDocumentMoniker": "Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs",
               "ToolTip": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs",
               "RelativeToolTip": "Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAD8AAABwAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADUAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T21:32:47.307Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameConfigSingletons.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
-              "ToolTip": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T19:03:16.193Z",
               "EditorCaption": ""
             },
             {
@@ -260,19 +273,8 @@
               "RelativeToolTip": "Assets\\FindComposition\\scripts\\TimeHandling.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T15:53:12.947Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "targetHandler.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\targetHandler.cs",
-              "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\targetHandler.cs",
-              "ToolTip": "C:\\Users\\DELL\\SpaceMathSimoVersion\\SpaceMathGames\\Assets\\FindComposition\\scripts\\targetHandler.cs",
-              "RelativeToolTip": "Assets\\FindComposition\\scripts\\targetHandler.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGQAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T15:49:02.543Z"
+              "WhenOpened": "2025-06-05T15:53:12.947Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

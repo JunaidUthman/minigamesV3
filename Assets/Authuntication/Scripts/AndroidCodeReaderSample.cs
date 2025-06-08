@@ -23,6 +23,8 @@ public class StandaloneEasyReaderSample : MonoBehaviour
     private bool isProcessing = false;
     private bool hasScannedSuccessfully = false;
 
+    private int test = 0;
+
     private IBarcodeReader barcodeReader = new BarcodeReader
     {
         AutoRotate = false,
@@ -64,7 +66,7 @@ public class StandaloneEasyReaderSample : MonoBehaviour
             return;
 
         camTexture.GetPixels32(cameraColorData);
-        Debug.Log($"Decode input array size: {cameraColorData.Length} ({width}x{height})");
+        //Debug.Log($"Decode input array size: {cameraColorData.Length} ({width}x{height})");
 
         result = barcodeReader.Decode(cameraColorData, width, height);
 
@@ -77,7 +79,7 @@ public class StandaloneEasyReaderSample : MonoBehaviour
         }
         else
         {
-            Debug.Log("there is no result");
+            //Debug.Log("there is no result");
         }
     }
 
@@ -213,6 +215,7 @@ public class StandaloneEasyReaderSample : MonoBehaviour
     {
         if (PlayerGlobalData.Instance == null)
         {
+            Debug.Log("PlayerGlobalData is null §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
             GameObject prefab = Resources.Load<GameObject>("Prefabs/PlayerGlobalData");
             if (prefab != null) Instantiate(prefab);
             yield return null;
@@ -220,6 +223,7 @@ public class StandaloneEasyReaderSample : MonoBehaviour
 
         if (TimeManager.Instance == null)
         {
+            Debug.Log("TimeManager is null §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
             GameObject timePrefab = Resources.Load<GameObject>("Prefabs/TimeManager");
             if (timePrefab != null) Instantiate(timePrefab);
             yield return null;
@@ -262,9 +266,10 @@ public class StandaloneEasyReaderSample : MonoBehaviour
     {
         Debug.Log("StoreGameConfig started.");
 
+
         if (GameConfigManager.Instance == null)
         {
-            Debug.Log("GameConfig is null");
+            Debug.Log("GameConfig is null §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
 
             GameObject prefab = Resources.Load<GameObject>("Prefabs/GameConfigManager");
             if (prefab != null) Instantiate(prefab);
