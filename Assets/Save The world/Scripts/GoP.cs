@@ -197,6 +197,9 @@ public class GoP : MonoBehaviour
             if (placedAnswer == correctAnswer)
             {
                 Debug.Log("good job");
+                ScoreManager.Instance.AddScore(10);
+                Debug.Log("score : " + ScoreManager.Instance.GetScore());
+
             }
             else
             {

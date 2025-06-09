@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cosmic-nebula-clouds_0: -3737427646683523528
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

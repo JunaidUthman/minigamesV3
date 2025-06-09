@@ -59,8 +59,8 @@ public class OpGen2 : MonoBehaviour
         //    availableFields[randomIndex] = temp;
         //}
 
-        // Prendre les 3 premiers pour les cacher
-        for (int i = 0; i < 3; i++)
+        // Prendre les 2 premiers pour les cacher
+        for (int i = 0; i < 2; i++)
         {
             string correctValue = availableFields[i].text;
             SetupDropZone(availableFields[i], correctValue);
@@ -172,6 +172,9 @@ public class OpGen2 : MonoBehaviour
         {
             Debug.Log("Certaines réponses sont incorrectes, essayez encore !");
         }
+        ScoreManager.Instance.AddScore(correctCount);
+        Debug.Log("score : "+ScoreManager.Instance.GetScore());
+
         Debug.Log($"Nombre de réponses correctes : {correctCount} sur {activeDropZones.Count}");
     }
 

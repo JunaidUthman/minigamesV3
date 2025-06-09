@@ -8,11 +8,13 @@ public class ScoreCacul : MonoBehaviour
     public int playerScore;
     public TextMeshPro scoreText;
     public GameObject GameOverScreen;
+    public Button jumpButton;
+
 
     [ContextMenu("increase")]
     public void addScore()
     {
-        playerScore += 1;
+        playerScore += 5;
         scoreText.text = playerScore.ToString();
     }
 
@@ -25,6 +27,7 @@ public class ScoreCacul : MonoBehaviour
     {
         Debug.Log("Game Over");
         GameOverScreen.SetActive(true);
+        jumpButton.gameObject.SetActive(false);
 
     }
 }
