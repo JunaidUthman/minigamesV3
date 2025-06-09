@@ -40,9 +40,6 @@ Thumbs.db
 *.apk
 *.keystore
 
-# ========== Git ==========
-.gitignore
-.gitattributes
 
 # ========== LFS backup (if you're using Git LFS) ==========
 *.bundle
