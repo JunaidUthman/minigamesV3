@@ -73,11 +73,13 @@
     <Compile Include="Assets\FindComposition\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\FindComposition\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\astronaut\Scripts\AST-AnswerOption.cs" />
+    <Compile Include="Assets\astrunautMenue\scripts\astrunautGuide.cs" />
     <Compile Include="Assets\FindComposition\scripts\FindCompoGuide.cs" />
     <Compile Include="Assets\astronaut\Scripts\AST-ChancesManager.cs" />
     <Compile Include="Assets\saveTheWorldMenue\scripts\saveWorldmenue_ButtonManager.cs" />
     <Compile Include="Assets\astronaut\Scripts\AST-CaracterScript.cs" />
     <Compile Include="Assets\FindComposition\scripts\gamePlay_ButtonHandler.cs" />
+    <Compile Include="Assets\astrunautMenue\scripts\astrunautButtonManager.cs" />
     <Compile Include="Assets\EndGame\Scripts\EndGame_guide.cs" />
     <Compile Include="Assets\FindComposition\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\LOBY\scripts\LOBY_TestEnding.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="Assets\LOBY\scripts\LOBY_guideScript.cs" />
     <Compile Include="Assets\astronaut\Scripts\AST-StonesMoveScript.cs" />
     <Compile Include="Assets\LOBY\scripts\LOBY_marker_movement.cs" />
+    <Compile Include="Assets\astrunautMenue\scripts\astrunautTimeManager.cs" />
     <Compile Include="Assets\LOBY\scripts\LOBY_camera_movement.cs" />
     <Compile Include="Assets\FindComposition\scripts\bullet_movement.cs" />
     <Compile Include="Assets\FindComposition\scripts\damage_bullet.cs" />
@@ -131,6 +134,7 @@
     <Compile Include="Assets\LOBY\scripts\LobyPlayer_movementforspaceship_movementFor.cs" />
     <Compile Include="Assets\LOBY\scripts\LOBY_player_movement.cs" />
     <Compile Include="Assets\astronaut\Scripts\AST-MiddlePipeScript.cs" />
+    <Compile Include="Assets\EndGame\Scripts\ENDGamemathLevelHistory.cs" />
     <Compile Include="Assets\LOBY\scripts\LOBY_entringGames.cs" />
     <Compile Include="Assets\Models\RewardProfile.cs" />
     <Compile Include="Assets\FindComposition\scripts\Score_Handling.cs" />
@@ -696,6 +700,26 @@
       <HintPath>Library\PackageCache\com.unity.ext.nunit@031a54704bff\net40\unity-custom\nunit.framework.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Firebase.Auth">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Database.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="zxing.unity">
+      <HintPath>Assets\Plugins_FoCcamera\zxing.unity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@7dcdc439b230\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
       <Private>False</Private>
@@ -704,32 +728,12 @@
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@d6f9955a5d5f\Mono.Cecil.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="zxing.unity">
-      <HintPath>Assets\Plugins_FoCcamera\zxing.unity.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Firebase.App">
-      <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Firebase.Database">
-      <HintPath>Assets\Firebase\Plugins\Firebase.Database.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Firebase.TaskExtension">
-      <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
+    <Reference Include="Firebase.Platform">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Google.MiniJson">
       <HintPath>Assets\Firebase\Plugins\Google.MiniJson.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Firebase.Auth">
-      <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Firebase.Platform">
-      <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">

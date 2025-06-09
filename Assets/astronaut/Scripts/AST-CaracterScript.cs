@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem; // Nouveau syst�me d�input
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class Caracter : MonoBehaviour
@@ -59,7 +60,8 @@ public class Caracter : MonoBehaviour
         if(sc.playerScore > 100)
         {
             birdIsAlive = false;
-            sc.GameOver();
+            SceneManager.LoadScene("loby");
+
         }
     }
 
