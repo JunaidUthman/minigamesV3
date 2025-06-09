@@ -31,11 +31,22 @@ public class GoP : MonoBehaviour
     public enum HiddenPart { Result, Soustraction, Reste }
     private DropZone currentDropZone;
 
+    private SW_ScoreDelivring SW_ScoreDelivringRef;
 
-
+    // db variables
+    private int minNumberRange;
+    private int maxNumberRange;
 
     void Start()
     {
+        SW_ScoreDelivringRef = GameObject.Find("score_Delivring").GetComponent<SW_ScoreDelivring>();
+
+        minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
+        Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation1 = " + minNumberRange);
+        maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
+        Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation1 = " + maxNumberRange);
+
+
         GenerateDivision();
         HideRandomPart();
         GenerateOptions(correctAnswer);
@@ -43,9 +54,9 @@ public class GoP : MonoBehaviour
 
     void GenerateDivision()
     {
-        int diviseur = Random.Range(2, 10);
-        int result = Random.Range(2, 10);
-        int reste = Random.Range(0, diviseur); // reste < diviseur
+        int diviseur = Random.Range(minNumberRange, maxNumberRange);
+        int result = Random.Range(minNumberRange, maxNumberRange);
+        int reste = Random.Range(minNumberRange, diviseur); // reste < diviseur
         int produit = diviseur * result;
         int dividende = produit + reste;
         int soustraction = produit;
@@ -202,9 +213,12 @@ public class GoP : MonoBehaviour
                 Debug.Log("good job");
                 ScoreManager.Instance.AddScore(10);
                 Debug.Log("score : " + ScoreManager.Instance.GetScore());
-                // junaid : i added this line so i can switch between canvas
-                isRight = true;
-                FindObjectOfType<OperationManager>().TryNextOperation(isRight);
+                // junaid : i added this lines so i can switch between canvas
+                //isRight = true;
+                //FindObjectOfType<OperationManager>().TryNextOperation(isRight);
+
+                SW_ScoreDelivringRef.deliverScore(ScoreManager.Instance.GetScore());
+
 
             }
             else

@@ -60,6 +60,7 @@ public class EndGameMathLevelLogger : MonoBehaviour
             if (task.IsCompletedSuccessfully)
             {
                 Debug.Log(" [Logger] Math level history updated successfully.");
+
             }
             else
             {

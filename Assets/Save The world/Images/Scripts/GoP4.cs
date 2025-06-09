@@ -23,8 +23,17 @@ public class GoP3 : MonoBehaviour
 
     public bool isRight = false;
 
+    // db variables
+    private int minNumberRange;
+    private int maxNumberRange;
+
     void Start()
     {
+        minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
+        Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation4 = " + minNumberRange);
+        maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
+        Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation4 = " + maxNumberRange);
+
         GenerateProblem();
     }
 
@@ -243,8 +252,10 @@ public class GoP3 : MonoBehaviour
         {
             Debug.Log("Toutes les réponses sont correctes !");
             // junaid : i added this line so i can switch between canvas
-            isRight = true;
-            FindObjectOfType<OperationManager>().TryNextOperation(isRight);
+            //isRight = true;
+            //FindObjectOfType<OperationManager>().TryNextOperation(isRight);
+
+
         }
         else
         {

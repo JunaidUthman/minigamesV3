@@ -1,18 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PC\\Unity new\\minigamesV2\\",
+  "WorkspaceRootPath": "C:\\Users\\DELL\\minigamesV2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8075E608-9603-9F33-1FFF-9D83268F4C97}|Assembly-CSharp.csproj|c:\\users\\pc\\unity new\\minigamesv2\\assets\\astronaut\\scripts\\ast-chancesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8075E608-9603-9F33-1FFF-9D83268F4C97}|Assembly-CSharp.csproj|solutionrelative:assets\\astronaut\\scripts\\ast-chancesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\minigamesV2\\Assets\\Save The world\\Scripts\\GoP.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Save The world\\Scripts\\GoP.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8075E608-9603-9F33-1FFF-9D83268F4C97}|Assembly-CSharp.csproj|C:\\Users\\PC\\Unity new\\minigamesV2\\assets\\astronaut\\scripts\\ast-scorecacul.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8075E608-9603-9F33-1FFF-9D83268F4C97}|Assembly-CSharp.csproj|solutionrelative:assets\\astronaut\\scripts\\ast-scorecacul.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\minigamesV2\\Assets\\Save The world\\Images\\Scripts\\SW_ScoreDelivring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Save The world\\Images\\Scripts\\SW_ScoreDelivring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8075E608-9603-9F33-1FFF-9D83268F4C97}|Assembly-CSharp.csproj|C:\\Users\\PC\\Unity new\\minigamesV2\\assets\\astronaut\\scripts\\ast-caracterscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8075E608-9603-9F33-1FFF-9D83268F4C97}|Assembly-CSharp.csproj|solutionrelative:assets\\astronaut\\scripts\\ast-caracterscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\minigamesV2\\Assets\\astronaut\\Scripts\\AST-CaracterScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\astronaut\\Scripts\\AST-CaracterScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\minigamesV2\\Assets\\Scripts\\Firebase\\FirebaseManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Firebase\\FirebaseManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\minigamesV2\\Assets\\Scripts\\Firebase\\PlayerGlobalData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Firebase\\PlayerGlobalData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\minigamesV2\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Firebase\\GameConfigSingletons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\minigamesV2\\Assets\\Authuntication\\Scripts\\AndroidCodeReaderSample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Authuntication\\Scripts\\AndroidCodeReaderSample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\minigamesV2\\Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\minigamesV2\\Assets\\FindComposition\\scripts\\targetHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\FindComposition\\scripts\\targetHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\minigamesV2\\Assets\\astronaut\\Scripts\\astronautControls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\astronaut\\Scripts\\astronautControls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +55,131 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AST-ScoreCacul.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Unity new\\minigamesV2\\Assets\\astronaut\\Scripts\\AST-ScoreCacul.cs",
-              "RelativeDocumentMoniker": "Assets\\astronaut\\Scripts\\AST-ScoreCacul.cs",
-              "ToolTip": "C:\\Users\\PC\\Unity new\\minigamesV2\\Assets\\astronaut\\Scripts\\AST-ScoreCacul.cs",
-              "RelativeToolTip": "Assets\\astronaut\\Scripts\\AST-ScoreCacul.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
+              "Title": "SW_ScoreDelivring.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\minigamesV2\\Assets\\Save The world\\Images\\Scripts\\SW_ScoreDelivring.cs",
+              "RelativeDocumentMoniker": "Assets\\Save The world\\Images\\Scripts\\SW_ScoreDelivring.cs",
+              "ToolTip": "C:\\Users\\DELL\\minigamesV2\\Assets\\Save The world\\Images\\Scripts\\SW_ScoreDelivring.cs",
+              "RelativeToolTip": "Assets\\Save The world\\Images\\Scripts\\SW_ScoreDelivring.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T17:27:56.193Z",
+              "WhenOpened": "2025-06-09T18:20:05.225Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AST-ChancesManager.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Unity new\\minigamesV2\\Assets\\astronaut\\Scripts\\AST-ChancesManager.cs",
-              "RelativeDocumentMoniker": "Assets\\astronaut\\Scripts\\AST-ChancesManager.cs",
-              "ToolTip": "C:\\Users\\PC\\Unity new\\minigamesV2\\Assets\\astronaut\\Scripts\\AST-ChancesManager.cs",
-              "RelativeToolTip": "Assets\\astronaut\\Scripts\\AST-ChancesManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "GoP.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\minigamesV2\\Assets\\Save The world\\Scripts\\GoP.cs",
+              "RelativeDocumentMoniker": "Assets\\Save The world\\Scripts\\GoP.cs",
+              "ToolTip": "C:\\Users\\DELL\\minigamesV2\\Assets\\Save The world\\Scripts\\GoP.cs*",
+              "RelativeToolTip": "Assets\\Save The world\\Scripts\\GoP.cs*",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T19:50:36.351Z",
+              "WhenOpened": "2025-06-09T14:52:23.16Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AST-CaracterScript.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Unity new\\minigamesV2\\Assets\\astronaut\\Scripts\\AST-CaracterScript.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\minigamesV2\\Assets\\astronaut\\Scripts\\AST-CaracterScript.cs",
               "RelativeDocumentMoniker": "Assets\\astronaut\\Scripts\\AST-CaracterScript.cs",
-              "ToolTip": "C:\\Users\\PC\\Unity new\\minigamesV2\\Assets\\astronaut\\Scripts\\AST-CaracterScript.cs",
+              "ToolTip": "C:\\Users\\DELL\\minigamesV2\\Assets\\astronaut\\Scripts\\AST-CaracterScript.cs",
               "RelativeToolTip": "Assets\\astronaut\\Scripts\\AST-CaracterScript.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAkwDoAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:28:09.26Z",
+              "WhenOpened": "2025-06-09T18:04:17.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameConfigSingletons.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\minigamesV2\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
+              "ToolTip": "C:\\Users\\DELL\\minigamesV2\\Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Firebase\\GameConfigSingletons.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T13:25:48.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerGlobalData.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\minigamesV2\\Assets\\Scripts\\Firebase\\PlayerGlobalData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\PlayerGlobalData.cs",
+              "ToolTip": "C:\\Users\\DELL\\minigamesV2\\Assets\\Scripts\\Firebase\\PlayerGlobalData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Firebase\\PlayerGlobalData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T18:01:31.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FirebaseManager.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\minigamesV2\\Assets\\Scripts\\Firebase\\FirebaseManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\FirebaseManager.cs",
+              "ToolTip": "C:\\Users\\DELL\\minigamesV2\\Assets\\Scripts\\Firebase\\FirebaseManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Firebase\\FirebaseManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T13:07:53.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AndroidCodeReaderSample.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\minigamesV2\\Assets\\Authuntication\\Scripts\\AndroidCodeReaderSample.cs",
+              "RelativeDocumentMoniker": "Assets\\Authuntication\\Scripts\\AndroidCodeReaderSample.cs",
+              "ToolTip": "C:\\Users\\DELL\\minigamesV2\\Assets\\Authuntication\\Scripts\\AndroidCodeReaderSample.cs",
+              "RelativeToolTip": "Assets\\Authuntication\\Scripts\\AndroidCodeReaderSample.cs",
+              "ViewState": "AgIAABQBAAAAAAAAAAAAACABAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T13:06:49.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EndGame_mathLevelManager.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\minigamesV2\\Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs",
+              "RelativeDocumentMoniker": "Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs",
+              "ToolTip": "C:\\Users\\DELL\\minigamesV2\\Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs",
+              "RelativeToolTip": "Assets\\EndGame\\Scripts\\EndGame_mathLevelManager.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAGIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T13:53:49.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "targetHandler.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\minigamesV2\\Assets\\FindComposition\\scripts\\targetHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\FindComposition\\scripts\\targetHandler.cs",
+              "ToolTip": "C:\\Users\\DELL\\minigamesV2\\Assets\\FindComposition\\scripts\\targetHandler.cs",
+              "RelativeToolTip": "Assets\\FindComposition\\scripts\\targetHandler.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAjwGgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T13:37:55.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "astronautControls.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\minigamesV2\\Assets\\astronaut\\Scripts\\astronautControls.cs",
+              "RelativeDocumentMoniker": "Assets\\astronaut\\Scripts\\astronautControls.cs",
+              "ToolTip": "C:\\Users\\DELL\\minigamesV2\\Assets\\astronaut\\Scripts\\astronautControls.cs",
+              "RelativeToolTip": "Assets\\astronaut\\Scripts\\astronautControls.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAjwM8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T12:57:42.487Z",
               "EditorCaption": ""
             }
           ]

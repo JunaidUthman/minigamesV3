@@ -3,7 +3,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 
-public class OpGen2 : MonoBehaviour
+public class OpGen3 : MonoBehaviour
 {
     [Header("UI Elements")]
     public TMP_Text dividendeText;
@@ -20,8 +20,17 @@ public class OpGen2 : MonoBehaviour
 
     public bool isRight = false;
 
+    // db variables
+    private int minNumberRange;
+    private int maxNumberRange;
+
     void Start()
     {
+        minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
+        Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation3 = " + minNumberRange);
+        maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
+        Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation3 = " + maxNumberRange);
+
         GenerateProblem();
     }
 
@@ -61,8 +70,8 @@ public class OpGen2 : MonoBehaviour
         //    availableFields[randomIndex] = temp;
         //}
 
-        // Prendre les 2 premiers pour les cacher
-        for (int i = 0; i < 2; i++)
+        // Prendre les 3 premiers pour les cacher
+        for (int i = 0; i < 3; i++)
         {
             string correctValue = availableFields[i].text;
             SetupDropZone(availableFields[i], correctValue);
@@ -178,12 +187,11 @@ public class OpGen2 : MonoBehaviour
             Debug.Log("Certaines réponses sont incorrectes, essayez encore !");
         }
         ScoreManager.Instance.AddScore(correctCount);
-        Debug.Log("score : "+ScoreManager.Instance.GetScore());
-
         Debug.Log($"Nombre de réponses correctes : {correctCount} sur {activeDropZones.Count}");
+        Debug.Log("score : " + ScoreManager.Instance.GetScore());
     }
 
-    
+
 
 
     //void ClearAllDropZones()
@@ -211,5 +219,5 @@ public class OpGen2 : MonoBehaviour
     //    }
     //}
 
-    
+
 }
