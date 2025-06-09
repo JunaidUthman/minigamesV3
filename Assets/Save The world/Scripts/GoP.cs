@@ -29,7 +29,17 @@ public class GoP : MonoBehaviour
     public enum HiddenPart { Result, Soustraction, Reste }
     private DropZone currentDropZone;
 
+    //database properties
+    private int minNumberRange;
+    private int maxNumberRange;
 
+    void Awake()
+    {
+        minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
+        Debug.Log("here is the minNumberRange :" + minNumberRange);
+        maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
+        Debug.Log("here is the maxNumberRange :" + maxNumberRange);
+    }
 
 
     void Start()

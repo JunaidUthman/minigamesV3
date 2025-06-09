@@ -17,8 +17,11 @@ public class Caracter : MonoBehaviour
 
     private astronautControls controls;
 
+    private ASTScoreDelivring ScoreDeliveringRef;
+
     void Awake()
     {
+
         controls = new astronautControls();
 
         // Lier l'action "Jump" � une m�thode
@@ -37,6 +40,8 @@ public class Caracter : MonoBehaviour
 
     void Start()
     {
+        ScoreDeliveringRef = GameObject.Find("scoreDelivring").GetComponent<ASTScoreDelivring>();
+
         sc = GameObject.FindGameObjectWithTag("ScoreLogic").GetComponent<ScoreCacul>();
         ch = GameObject.Find("Life Manager").GetComponent<ChancesManager>();
 
@@ -57,10 +62,11 @@ public class Caracter : MonoBehaviour
             sc.GameOver();
             birdIsAlive = false;
         }
-        if(sc.playerScore > 100)
+        if(sc.playerScore > 10)
         {
             birdIsAlive = false;
-            SceneManager.LoadScene("loby");
+            ScoreDeliveringRef.deliverScore(sc.playerScore);
+            SceneManager.LoadScene(1);
 
         }
     }

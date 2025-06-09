@@ -32,5 +32,6 @@ public class GameConfig
     public int numComposition;
     public int order;
     public int requiredCorrectAnswersMinimumPercent;
+    public int minNumberRange;
 }
 

@@ -310,7 +310,8 @@ public class StandaloneEasyReaderSample : MonoBehaviour
                 numOperations = int.Parse(snapshot.Child("numOperations").Value?.ToString() ?? "0"),
                 numComposition = int.Parse(snapshot.Child("numComposition").Value?.ToString() ?? "0"),
                 order = int.Parse(snapshot.Child("order").Value?.ToString() ?? "0"),
-                requiredCorrectAnswersMinimumPercent = int.Parse(snapshot.Child("requiredCorrectAnswers").Value?.ToString() ?? "0")
+                requiredCorrectAnswersMinimumPercent = int.Parse(snapshot.Child("requiredCorrectAnswers").Value?.ToString() ?? "0"),
+                minNumberRange = int.Parse(snapshot.Child("minNumberRange").Value?.ToString() ?? "0")
             };
 
             Debug.Log("Game config loaded successfully for: " + snapshot.Key);
