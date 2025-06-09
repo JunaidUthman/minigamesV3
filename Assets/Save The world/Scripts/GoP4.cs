@@ -21,6 +21,8 @@ public class GoP3 : MonoBehaviour
     private List<DropZone> activeDropZones = new List<DropZone>();
     private Dictionary<DropZone, string> correctAnswers = new Dictionary<DropZone, string>();
 
+    public bool isRight = false;
+
     void Start()
     {
         GenerateProblem();
@@ -240,6 +242,9 @@ public class GoP3 : MonoBehaviour
         if (correctCount == activeDropZones.Count)
         {
             Debug.Log("Toutes les réponses sont correctes !");
+            // junaid : i added this line so i can switch between canvas
+            isRight = true;
+            FindObjectOfType<OperationManager>().TryNextOperation(isRight);
         }
         else
         {

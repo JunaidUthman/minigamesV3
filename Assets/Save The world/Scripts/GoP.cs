@@ -16,6 +16,8 @@ public class GoP : MonoBehaviour
     public GameObject soustractionGO;
     public GameObject resteGO;
 
+    public bool isRight=false;
+
     //private int dividend;
     //private int divisor;
     //private int quotient;
@@ -29,17 +31,7 @@ public class GoP : MonoBehaviour
     public enum HiddenPart { Result, Soustraction, Reste }
     private DropZone currentDropZone;
 
-    //database properties
-    private int minNumberRange;
-    private int maxNumberRange;
 
-    void Awake()
-    {
-        minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
-        Debug.Log("here is the minNumberRange :" + minNumberRange);
-        maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
-        Debug.Log("here is the maxNumberRange :" + maxNumberRange);
-    }
 
 
     void Start()
@@ -206,9 +198,13 @@ public class GoP : MonoBehaviour
 
             if (placedAnswer == correctAnswer)
             {
+                
                 Debug.Log("good job");
                 ScoreManager.Instance.AddScore(10);
                 Debug.Log("score : " + ScoreManager.Instance.GetScore());
+                // junaid : i added this line so i can switch between canvas
+                isRight = true;
+                FindObjectOfType<OperationManager>().TryNextOperation(isRight);
 
             }
             else

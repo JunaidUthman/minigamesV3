@@ -132,6 +132,7 @@
     <Compile Include="Assets\saveTheWorldMenue\scripts\SaveWorldTimeManagement.cs" />
     <Compile Include="Assets\FindComposition\scripts\backgrounf_movement.cs" />
     <Compile Include="Assets\LOBY\scripts\LobyPlayer_movementforspaceship_movementFor.cs" />
+    <Compile Include="Assets\Save The world\Scripts\OperationManager.cs" />
     <Compile Include="Assets\LOBY\scripts\LOBY_player_movement.cs" />
     <Compile Include="Assets\astronaut\Scripts\AST-MiddlePipeScript.cs" />
     <Compile Include="Assets\EndGame\Scripts\ENDGamemathLevelHistory.cs" />
