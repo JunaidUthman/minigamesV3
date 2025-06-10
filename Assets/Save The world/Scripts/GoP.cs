@@ -214,7 +214,7 @@ public class GoP : MonoBehaviour
             {
                 
                 Debug.Log("good job");
-                ScoreManager.Instance.AddScore(10);
+                ScoreManager.Instance.AddScore(3);
                 Debug.Log("score : " + ScoreManager.Instance.GetScore());
                 // junaid : i added this lines so i can switch between canvas
                 //isRight = true;
