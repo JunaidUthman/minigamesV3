@@ -112,6 +112,7 @@
     <Compile Include="Assets\FindComposition\scripts\damage_bullet.cs" />
     <Compile Include="Assets\astronaut\Scripts\AST-ScoreCacul.cs" />
     <Compile Include="Assets\FindComposition\Joystick Pack\Scripts\Base\Joystick.cs" />
+    <Compile Include="Assets\astronaut\Scripts\AST_timeHandling.cs" />
     <Compile Include="Assets\Models\TestModel.cs" />
     <Compile Include="Assets\FindComposition\scripts\ScoreDelivering.cs" />
     <Compile Include="Assets\FindComposition\scripts\DivisionCompositionGenerator.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Assets\FindComposition\scripts\Menue_ShooterbuttonHandler.cs" />
     <Compile Include="Assets\Save The world\Scripts\STW-ScoreManager.cs" />
     <Compile Include="Assets\LOBY\scripts\LOBY_CountdownTimer.cs" />
+    <Compile Include="Assets\EndGame\Scripts\totalScoreManager.cs" />
     <Compile Include="Assets\astronaut\Scripts\AST-ScoreDelivring.cs" />
     <Compile Include="Assets\Save The world\Scripts\TestSubmit.cs" />
     <Compile Include="Assets\FindComposition\scripts\player_shooting_.cs" />
