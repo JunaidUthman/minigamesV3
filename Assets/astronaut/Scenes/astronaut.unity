@@ -412,6 +412,9 @@ MonoBehaviour:
   spawnInterval: 5
   spawnX: 22.1
   despawnX: -19
+  optimizationMode: 1
+  maxPoolSize: 3
+  stoneSpeed: 2
 --- !u!4 &50461393
 Transform:
   m_ObjectHideFlags: 0

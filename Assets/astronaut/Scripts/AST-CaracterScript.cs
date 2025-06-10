@@ -18,6 +18,9 @@ public class Caracter : MonoBehaviour
     private astronautControls controls;
 
     private ASTScoreDelivring ScoreDeliveringRef;
+    //public StonesFactory stonesFactory;
+    public StonesFactory stonesFactoryScript;
+    public GameObject stonesFactoryObject;
 
     void Awake()
     {
@@ -39,8 +42,30 @@ public class Caracter : MonoBehaviour
     }
 
     void Start()
+
+
+
+
     {
+
+
+        if (stonesFactoryObject != null)
+        {
+            stonesFactoryScript = stonesFactoryObject.GetComponent<StonesFactory>();
+            if (stonesFactoryScript == null)
+            {
+                Debug.LogError("StonesFactory script not found on the assigned GameObject!");
+            }
+        }
+        else
+        {
+            Debug.LogError("StonesFactory GameObject not assigned!");
+        }
+
+
         ScoreDeliveringRef = GameObject.Find("scoreDelivring").GetComponent<ASTScoreDelivring>();
+
+
 
         sc = GameObject.FindGameObjectWithTag("ScoreLogic").GetComponent<ScoreCacul>();
         ch = GameObject.Find("Life Manager").GetComponent<ChancesManager>();
@@ -65,11 +90,28 @@ public class Caracter : MonoBehaviour
         if(sc.playerScore > 10)
         {
             birdIsAlive = false;
+            StopGeneratingStones();
             ScoreDeliveringRef.deliverScore(sc.playerScore);
             SceneManager.LoadScene(1);
 
         }
     }
+
+
+    public void StopGeneratingStones()
+    {
+        if (stonesFactoryScript != null)
+        {
+            // CORRECTE: Utiliser la méthode du script, pas SetActive
+            stonesFactoryScript.SetGameActive(false);
+            Debug.Log("Stone generation stopped - Bird is dead");
+        }
+        else
+        {
+            Debug.LogError("StonesFactory script reference is null!");
+        }
+    }
+
 
     public void OnJump()
     {
@@ -94,6 +136,7 @@ public class Caracter : MonoBehaviour
                 if (ch.life == 0)
                 {
                     sc.GameOver();
+                    StopGeneratingStones();
                     birdIsAlive = false;
                 }
             }
