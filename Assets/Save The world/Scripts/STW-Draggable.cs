@@ -95,4 +95,12 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         rectTransform.anchoredPosition = originalPosition;
         currentDropZone = null;
     }
+    void OnEnable()
+    {
+        // Sauvegarder la position et le parent d'origine à chaque activation
+        if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
+        if (originalParent == null) originalParent = transform.parent;
+        originalPosition = rectTransform.anchoredPosition;
+    }
+
 }

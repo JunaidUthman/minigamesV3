@@ -54,12 +54,15 @@ public class GoP : MonoBehaviour
 
     void GenerateDivision()
     {
+        //pour version DB
         int diviseur = Random.Range(minNumberRange, maxNumberRange);
         int result = Random.Range(minNumberRange, maxNumberRange);
         int reste = Random.Range(minNumberRange, diviseur); // reste < diviseur
         int produit = diviseur * result;
         int dividende = produit + reste;
         int soustraction = produit;
+
+
 
 
         //affecter les objets 
