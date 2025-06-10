@@ -27,12 +27,16 @@ public class GoP3 : MonoBehaviour
     private int minNumberRange;
     private int maxNumberRange;
 
+    private SW_ScoreDelivring SW_ScoreDelivringRef;
+
     void Start()
     {
-        minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
-        Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation4 = " + minNumberRange);
-        maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
-        Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation4 = " + maxNumberRange);
+        SW_ScoreDelivringRef = GameObject.Find("score_Delivring").GetComponent<SW_ScoreDelivring>();
+
+        //minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
+        //Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation4 = " + minNumberRange);
+        //maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
+        //Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation4 = " + maxNumberRange);
 
         GenerateProblem();
     }
@@ -252,8 +256,8 @@ public class GoP3 : MonoBehaviour
         {
             Debug.Log("Toutes les réponses sont correctes !");
             // junaid : i added this line so i can switch between canvas
-            //isRight = true;
-            //FindObjectOfType<OperationManager>().TryNextOperation(isRight);
+
+            SW_ScoreDelivringRef.deliverScore(ScoreManager.Instance.GetScore());
 
 
         }

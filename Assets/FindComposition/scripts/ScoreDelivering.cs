@@ -68,7 +68,6 @@ public class ScoreDelivering : MonoBehaviour
         if (GameConfigManager.Instance != null)
         {
             GameConfigManager.Instance.findCompositionScore = lastScore;
-            GameConfigManager.Instance.verticalOperationsScore = lastScore;
             Debug.Log("the last score of Find Compo game is stored correctly in the GameConfigSingletons :" + GameConfigManager.Instance.findCompositionScore);
         }
         else

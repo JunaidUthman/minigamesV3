@@ -10,9 +10,9 @@ public class GameConfigManager : MonoBehaviour
     public GameConfig chooseAnswer;
     public GameConfig verticalOperations;
 
-    public int findCompositionScore;
-    public int chooseAnswerScore = 10;
-    public int verticalOperationsScore= 5;
+    public int findCompositionScore=0;
+    public int chooseAnswerScore=0;
+    public int verticalOperationsScore=0;
 
     private void Awake()
     {

@@ -99,37 +99,37 @@ public class EndGame_mathLevelManager : MonoBehaviour
         }
 
         //  Finally, log the current math level to history
-        LogMathLevelToHistory();
+        //LogMathLevelToHistory();
     }
 
-    public void LogMathLevelToHistory()
-    {
-        if (!FirebaseManager.Instance.IsFirebaseReady || PlayerGlobalData.Instance == null)
-        {
-            Debug.LogError("❌ Firebase not ready or PlayerGlobalData is null.");
-            return;
-        }
+    //public void LogMathLevelToHistory()
+    //{
+    //    if (!FirebaseManager.Instance.IsFirebaseReady || PlayerGlobalData.Instance == null)
+    //    {
+    //        Debug.LogError("❌ Firebase not ready or PlayerGlobalData is null.");
+    //        return;
+    //    }
 
-        string userId = PlayerGlobalData.Instance.id;
-        int currentMathLevel = PlayerGlobalData.Instance.mathLevel;
-        string currentDate = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
+    //    string userId = PlayerGlobalData.Instance.id;
+    //    int currentMathLevel = PlayerGlobalData.Instance.mathLevel;
+    //    string currentDate = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
 
-        DatabaseReference historyRef = FirebaseManager.Instance.DbReference
-            .Child("users")
-            .Child(userId)
-            .Child("historyMathLevel");
+    //    DatabaseReference historyRef = FirebaseManager.Instance.DbReference
+    //        .Child("users")
+    //        .Child(userId)
+    //        .Child("historyMathLevel");
 
-        historyRef.Push().SetRawJsonValueAsync($"{{\"date\":\"{currentDate}\",\"mathLevel\":{currentMathLevel}}}")
-            .ContinueWithOnMainThread(task =>
-            {
-                if (task.IsCompleted && !task.IsFaulted && !task.IsCanceled)
-                {
-                    Debug.Log($" Math level logged to history: {currentMathLevel} at {currentDate}");
-                }
-                else
-                {
-                    Debug.LogError($" Failed to log math level: {task.Exception}");
-                }
-            });
-    }
+    //    historyRef.Push().SetRawJsonValueAsync($"{{\"date\":\"{currentDate}\",\"mathLevel\":{currentMathLevel}}}")
+    //        .ContinueWithOnMainThread(task =>
+    //        {
+    //            if (task.IsCompleted && !task.IsFaulted && !task.IsCanceled)
+    //            {
+    //                Debug.Log($" Math level logged to history: {currentMathLevel} at {currentDate}");
+    //            }
+    //            else
+    //            {
+    //                Debug.LogError($" Failed to log math level: {task.Exception}");
+    //            }
+    //        });
+    //}
 }

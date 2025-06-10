@@ -26,10 +26,10 @@ public class OpGen2 : MonoBehaviour
 
     void Start()
     {
-        minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
-        Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation2 = " + minNumberRange);
-        maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
-        Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation2 = " + maxNumberRange);
+        //minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
+        //Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation2 = " + minNumberRange);
+        //maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
+        //Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation2 = " + maxNumberRange);
 
         GenerateProblem();
     }
