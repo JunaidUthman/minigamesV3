@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/astrunautMenue/sceans/astrunautMenueScean.unity
     guid: 2e16e47784b176b43bcc188e3e0e0df3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Save The world/Scenes/SaveTheWorld.unity
     guid: 4fdba4f8699b178418eb7dd971d900d9
   - enabled: 1
