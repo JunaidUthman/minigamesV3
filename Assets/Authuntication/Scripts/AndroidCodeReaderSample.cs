@@ -44,7 +44,21 @@ public class StandaloneEasyReaderSample : MonoBehaviour
 
         lastResult = "";
         cameraColorData = new Color32[width * height];
-        screenRect = new Rect(0, 0, Screen.width, Screen.height);
+
+
+        // Ratio (0.7 means 70% of the screen height, adjustable)
+        float ratio = 0.9f;
+
+        // Make the square size based on screen height (to ensure it's a square)
+        float size = Screen.height * ratio;
+
+        // Center the square horizontally and vertically
+        float x = (Screen.width - size) / 2f;
+        float y = (Screen.height - size) / 2f;
+
+        screenRect = new Rect(x, y, size, size);
+
+
     }
 
     private void OnEnable()
