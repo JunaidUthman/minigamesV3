@@ -8,6 +8,8 @@ public class gamePlay_ButtonHandler : MonoBehaviour
     private Score_Handling ScoreHandlerRef;
 
     public GameObject PauseMenueRef;
+    public GameObject fire;
+    public GameObject left_Rigth;
 
     void Start()
     {
@@ -32,6 +34,8 @@ public class gamePlay_ButtonHandler : MonoBehaviour
 
     public void pause()
     {
+        fire.SetActive(false);
+        left_Rigth.SetActive(false);
         Debug.Log("pauuuuuuuse");
         Time.timeScale = 0f;
         PauseMenueRef.SetActive(true);
@@ -39,6 +43,8 @@ public class gamePlay_ButtonHandler : MonoBehaviour
 
     public void resume()
     {
+        fire.SetActive(true);
+        left_Rigth.SetActive(true);
         Debug.Log("resuuume");
         Time.timeScale = 1f;
         PauseMenueRef.SetActive(false);

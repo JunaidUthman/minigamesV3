@@ -12,7 +12,7 @@ public class GuideManager : MonoBehaviour
     public Button nextButton;
     public Image guideImage;
     public GameObject miniMap;
-    public GameObject ExitButton;
+    //public GameObject ExitButton;
 
     private int currentIndex = 0;
 
@@ -49,7 +49,7 @@ public class GuideManager : MonoBehaviour
         {
             isSeen = true;
             miniMap.SetActive(false);
-            ExitButton.SetActive(true);
+            //ExitButton.SetActive(true);
             guidePanel.SetActive(true);
             guideText.text = messages[currentIndex];
             guideImage.sprite = guideImages[currentIndex];
@@ -73,7 +73,7 @@ public class GuideManager : MonoBehaviour
         else
         {
             guidePanel.SetActive(false);
-            ExitButton.SetActive(false);
+            //ExitButton.SetActive(false);
             miniMap.SetActive(true);
             Time.timeScale = 1f;
         }
@@ -83,7 +83,7 @@ public class GuideManager : MonoBehaviour
     {
         guidePanel.SetActive(false);
         miniMap.SetActive(true);
-        ExitButton.SetActive(false);
+        //ExitButton.SetActive(false);
         Time.timeScale = 1f;
     }
 }
