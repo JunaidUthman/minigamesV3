@@ -256,8 +256,8 @@ public class GoP3 : MonoBehaviour
         {
             Debug.Log("Toutes les réponses sont correctes !");
             // junaid : i added this line so i can switch between canvas
-
-            SW_ScoreDelivringRef.deliverScore(ScoreManager.Instance.GetScore());
+            Debug.Log("tis is te last game");
+            //SW_ScoreDelivringRef.deliverScore(ScoreManager.Instance.GetScore());
 
 
         }
