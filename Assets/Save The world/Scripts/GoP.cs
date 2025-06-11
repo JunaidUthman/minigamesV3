@@ -43,10 +43,10 @@ public class GoP : MonoBehaviour
     {
         //SW_ScoreDelivringRef = GameObject.Find("score_Delivring").GetComponent<SW_ScoreDelivring>();
 
-        //minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
-        //Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation1 = " + minNumberRange);
-        //maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
-        //Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation1 = " + maxNumberRange);
+        minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
+        Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation1 = " + minNumberRange);
+        maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
+        Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation1 = " + maxNumberRange);
 
         if (levelManager == null)
             levelManager = FindObjectOfType<LevelManager>();
@@ -58,19 +58,19 @@ public class GoP : MonoBehaviour
     void GenerateDivision()
     {
         //pour version DB
-        //int diviseur = Random.Range(minNumberRange, maxNumberRange);
-        //int result = Random.Range(minNumberRange, maxNumberRange);
-        //int reste = Random.Range(minNumberRange, diviseur); // reste < diviseur
-        //int produit = diviseur * result;
-        //int dividende = produit + reste;
-        //int soustraction = produit;
-
-        int diviseur = Random.Range(0, 10);
-        int result = Random.Range(0, 10);
-        int reste = Random.Range(0, diviseur); // reste < diviseur
+        int diviseur = Random.Range(minNumberRange, maxNumberRange);
+        int result = Random.Range(minNumberRange, maxNumberRange);
+        int reste = Random.Range(minNumberRange, diviseur); // reste < diviseur
         int produit = diviseur * result;
         int dividende = produit + reste;
         int soustraction = produit;
+
+        //int diviseur = Random.Range(0, 10);
+        //int result = Random.Range(0, 10);
+        //int reste = Random.Range(0, diviseur); // reste < diviseur
+        //int produit = diviseur * result;
+        //int dividende = produit + reste;
+        //int soustraction = produit;
 
 
         //affecter les objets 

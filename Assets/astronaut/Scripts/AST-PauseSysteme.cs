@@ -3,29 +3,43 @@ using UnityEngine.SceneManagement;
 
 public class AST_PauseSysteme : MonoBehaviour
 {
+
+    private ASTScoreDelivring ScoreDeliveringRef;
+
+    private ScoreCacul sc;
+
     public GameObject PauseMenue;
 
     void Start()
     {
+        ScoreDeliveringRef = GameObject.Find("scoreDelivring").GetComponent<ASTScoreDelivring>();
+
+        sc = GameObject.FindGameObjectWithTag("ScoreLogic").GetComponent<ScoreCacul>();
+
         PauseMenue.SetActive(false);
-        Time.timeScale = 1f; // Ensure game is unpaused when starting
+        Time.timeScale = 1f; 
     }
 
     public void OnPauseClicked()
     {
-        Time.timeScale = 0f; // Pause the game
-        PauseMenue.SetActive(true); // Show the pause menu
+        Time.timeScale = 0f; 
+        PauseMenue.SetActive(true); 
     }
 
     public void OnPlayClicked()
     {
-        PauseMenue.SetActive(false); // Hide the pause menu
-        Time.timeScale = 1f; // Resume the game
+        PauseMenue.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void OnExitClicked()
     {
-        Time.timeScale = 1f; // Make sure game is unpaused before leaving
-        SceneManager.LoadScene(8); // Load desired scene
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene(1); 
+
+
+        int lastScore = sc.playerScore;
+
+        ScoreDeliveringRef.deliverScore(lastScore);
     }
 }

@@ -7,20 +7,20 @@ public class ASTScoreDelivring : MonoBehaviour
 {
     public void deliverScore(int lastScore)
 {
-    // storing the score in the firebase database
+
     if (FirebaseManager.Instance != null && FirebaseManager.Instance.IsFirebaseReady)
     {
         Debug.Log("fire base instance exist");
         string userId = PlayerGlobalData.Instance.id;
 
-        // Reference to the user's find_compositions progress
+
         DatabaseReference gameProgressRef = FirebaseManager.Instance.DbReference
             .Child("users")
             .Child(userId)
             .Child("gameProgress")
             .Child("choose_answer");
 
-        // Read current bestScore from Firebase first
+      
         gameProgressRef.GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted)
@@ -52,13 +52,13 @@ public class ASTScoreDelivring : MonoBehaviour
             Debug.Log("the current score is : " + lastScore);
             Debug.Log("the best score is : " + bestScore);
 
-            // Set values in Firebase
+           
             gameProgressRef.Child("lastScore").SetValueAsync(lastScore);
             gameProgressRef.Child("bestScore").SetValueAsync(bestScore);
             gameProgressRef.Child("completedAt").SetValueAsync(timestamp);
 
 
-            // storing the currentScore(lastScore) into the playerGlobalData
+            
 
             if (PlayerGlobalData.Instance != null)
             {
@@ -70,7 +70,7 @@ public class ASTScoreDelivring : MonoBehaviour
 
         });
     }
-    // storing the score in the GameConfigSingletons.findCompositionScore
+    
     if (GameConfigManager.Instance != null)
     {
 

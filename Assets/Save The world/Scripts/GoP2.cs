@@ -27,10 +27,10 @@ public class OpGen2 : MonoBehaviour
 
     void Start()
     {
-        //minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
-        //Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation2 = " + minNumberRange);
-        //maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
-        //Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation2 = " + maxNumberRange);
+        minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
+        Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation2 = " + minNumberRange);
+        maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
+        Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation2 = " + maxNumberRange);
 
         if (levelManager == null)
             levelManager = FindObjectOfType<LevelManager>();
@@ -43,9 +43,15 @@ public class OpGen2 : MonoBehaviour
         //ClearAllDropZones();
 
         // Générer une division simple
-        int diviseur = Random.Range(2, 10);
-        int quotient = Random.Range(2, 15);
-        int reste = Random.Range(0, diviseur - 1);
+        //int diviseur = Random.Range(2, 10);
+        //int quotient = Random.Range(2, 15);
+        //int reste = Random.Range(0, diviseur - 1);
+        //int dividende = (quotient * diviseur) + reste;
+        //int soustraction = quotient * diviseur;
+
+        int diviseur = Random.Range(minNumberRange, maxNumberRange);
+        int quotient = Random.Range(minNumberRange, maxNumberRange);
+        int reste = Random.Range(minNumberRange, diviseur - 1);
         int dividende = (quotient * diviseur) + reste;
         int soustraction = quotient * diviseur;
 

@@ -6,48 +6,48 @@ using System;
 
 public class EndGameMathLevelLogger : MonoBehaviour
 {
-    [SerializeField] private MonoBehaviour prerequisiteScript; // drag the required script here in the Inspector
+    [SerializeField] private MonoBehaviour prerequisiteScript;
 
-    private IEnumerator Start()
+    // ✅ Make Start public so Unity can detect and call it automatically
+    public IEnumerator Start()
     {
-        Debug.Log("🟨 [Logger] Start called. Waiting for Firebase...");
-
         yield return new WaitUntil(() => FirebaseManager.Instance != null && FirebaseManager.Instance.IsFirebaseReady);
 
-        Debug.Log("✅ [Logger] Firebase is ready.");
-
-        if (prerequisiteScript != null)
+        if (prerequisiteScript is EndGame_mathLevelManager prereq)
         {
-            Debug.Log("🟨 [Logger] Waiting for prerequisite script to finish: " + prerequisiteScript.GetType().Name);
-            var prereq = prerequisiteScript as EndGame_mathLevelManager;
-            if (prereq != null)
-            {
-                yield return new WaitUntil(() => prereq.isCompleted);
-                Debug.Log("✅ [Logger] Prerequisite script completed via flag.");
-            }
-            else
-            {
-                Debug.LogWarning("⚠️ [Logger] prerequisiteScript is not of expected type.");
-            }
-            Debug.Log("✅ [Logger] Prerequisite script finished.");
-        }
-        else
-        {
-            Debug.Log("⚠️ [Logger] No prerequisite script assigned.");
+            yield return new WaitUntil(() => prereq.isCompleted);
         }
 
         if (PlayerGlobalData.Instance == null)
         {
-            Debug.LogError("❌ [Logger] PlayerGlobalData.Instance is null. Cannot proceed.");
+            Debug.LogError("[Logger] PlayerGlobalData is null.");
             yield break;
         }
 
         string userId = PlayerGlobalData.Instance.id;
-        int currentMathLevel = PlayerGlobalData.Instance.mathLevel;
+
+        // 🔍 Retrieve mathLevel from Firebase
+        DatabaseReference mathLevelRef = FirebaseManager.Instance.DbReference
+            .Child("users").Child(userId).Child("mathLevel");
+
+        var getTask = mathLevelRef.GetValueAsync();
+        yield return new WaitUntil(() => getTask.IsCompleted);
+
+        if (!getTask.IsCompletedSuccessfully || !getTask.Result.Exists)
+        {
+            Debug.LogError("[Logger] Failed to fetch mathLevel from Firebase.");
+            yield break;
+        }
+
+        if (!int.TryParse(getTask.Result.Value.ToString(), out int currentMathLevel))
+        {
+            Debug.LogError("[Logger] Invalid mathLevel value in Firebase.");
+            yield break;
+        }
+
         string currentDate = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
 
-        Debug.Log("🟩 [Logger] Logging math level " + currentMathLevel + " at " + currentDate + " for user: " + userId);
-
+        // 📤 Log the math level history
         DatabaseReference userRef = FirebaseManager.Instance.DbReference
             .Child("users").Child(userId).Child("historyMathLevel");
 
@@ -59,12 +59,11 @@ public class EndGameMathLevelLogger : MonoBehaviour
         {
             if (task.IsCompletedSuccessfully)
             {
-                Debug.Log(" [Logger] Math level history updated successfully.");
-
+                Debug.Log("[Logger] Math level " + currentMathLevel + " logged successfully.");
             }
             else
             {
-                Debug.LogError(" [Logger] Failed to update math level history: " + task.Exception);
+                Debug.LogError("[Logger] Failed to log math level: " + task.Exception);
             }
         });
     }

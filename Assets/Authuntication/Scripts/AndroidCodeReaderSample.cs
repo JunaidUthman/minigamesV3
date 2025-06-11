@@ -288,6 +288,18 @@ public class StandaloneEasyReaderSample : MonoBehaviour
         GameConfigManager.Instance.chooseAnswer = ExtractGameConfig(games.Child("choose_answer"));
         GameConfigManager.Instance.verticalOperations = ExtractGameConfig(games.Child("vertical_operations"));
 
+
+        // initializing this variables by 0 cause i found them intialized by 0 , 15 , 5 .
+
+        GameConfigManager.Instance.findCompositionScore = 0;
+        GameConfigManager.Instance.chooseAnswerScore = 0;
+        GameConfigManager.Instance.verticalOperationsScore = 0;
+
+
+        Debug.Log("GameConfigManager.Instance.findCompositionScore = " + GameConfigManager.Instance.findCompositionScore);
+        Debug.Log("GameConfigManager.Instance.chooseAnswerScore = " + GameConfigManager.Instance.chooseAnswerScore);
+        Debug.Log("GameConfigManager.Instance.verticalOperationsScore = " + GameConfigManager.Instance.verticalOperationsScore);
+
         Debug.Log("Stored all game configurations.");
     }
 

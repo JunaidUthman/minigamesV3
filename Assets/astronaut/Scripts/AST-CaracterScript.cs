@@ -81,17 +81,17 @@ public class Caracter : MonoBehaviour
         float screenAspect = Camera.main.aspect;
         float leftLimit = -Camera.main.orthographicSize * screenAspect;
 
-        // ➤ Bird dépasse par le haut, le bas ou la gauche
+
         if (transform.position.y > topLimit ||
             transform.position.y < bottomLimit ||
             transform.position.x < leftLimit)
         {
             sc.GameOver();
             birdIsAlive = false;
-            StopGeneratingStones(); // ← n'oublie pas de stopper ici aussi
+            StopGeneratingStones(); 
         }
 
-        if (sc.playerScore > 10)
+        if (sc.playerScore > 15)
         {
             birdIsAlive = false;
             StopGeneratingStones();
@@ -106,7 +106,7 @@ public class Caracter : MonoBehaviour
     {
         if (stonesFactoryScript != null)
         {
-            // CORRECTE: Utiliser la méthode du script, pas SetActive
+
             stonesFactoryScript.SetGameActive(false);
             Debug.Log("Stone generation stopped - Bird is dead");
         }

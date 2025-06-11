@@ -1,20 +1,17 @@
 using UnityEngine;
 using TMPro;
 
-
-public class AST_timeHandling : MonoBehaviour
+public class STW_timeHandling : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
 
-    private ASTScoreDelivring ScoreDeliveringRef;
+    private SW_ScoreDelivring SW_ScoreDelivringRef;
 
-    private ScoreCacul sc;
 
     void Start()
     {
-        ScoreDeliveringRef = GameObject.Find("scoreDelivring").GetComponent<ASTScoreDelivring>();
+        SW_ScoreDelivringRef = GameObject.Find("score_Delivring").GetComponent<SW_ScoreDelivring>();
 
-        sc = GameObject.FindGameObjectWithTag("ScoreLogic").GetComponent<ScoreCacul>();
     }
 
     void Update()
@@ -30,11 +27,7 @@ public class AST_timeHandling : MonoBehaviour
 
             if (t <= 0)
             {
-
-                int lastScore = sc.playerScore;
-
-
-                ScoreDeliveringRef.deliverScore(lastScore);
+                SW_ScoreDelivringRef.deliverScore(ScoreManager.Instance.GetScore());
             }
         }
     }

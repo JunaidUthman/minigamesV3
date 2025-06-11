@@ -4,8 +4,12 @@ public class STW_PauseSystem : MonoBehaviour
 {
     public GameObject PauseMenue;
 
+    private SW_ScoreDelivring SW_ScoreDelivringRef;
+
     void Start()
     {
+        SW_ScoreDelivringRef = GameObject.Find("score_Delivring").GetComponent<SW_ScoreDelivring>();
+
         PauseMenue.SetActive(false);
         Time.timeScale = 1f; // Ensure game is unpaused when starting
     }
@@ -26,5 +30,7 @@ public class STW_PauseSystem : MonoBehaviour
     {
         Time.timeScale = 1f; // Make sure game is unpaused before leaving
         SceneManager.LoadScene(1); // Load desired scene
+
+        SW_ScoreDelivringRef.deliverScore(ScoreManager.Instance.GetScore());
     }
 }

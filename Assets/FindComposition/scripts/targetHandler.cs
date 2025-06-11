@@ -102,7 +102,7 @@ public class targetHandler : MonoBehaviour
 
         //    targetText.text = "target :" + newTarget;
         //}
-        if (ScoreHandlerRef.score == 2 && !hasDeliveredScore)
+        if (ScoreHandlerRef.score == 10 && !hasDeliveredScore)
         {
             hasDeliveredScore = true;
 

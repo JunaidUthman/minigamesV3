@@ -10,17 +10,17 @@ public class CountdownTimer : MonoBehaviour
 
     void Start()
     {
-        // Start a coroutine that waits until PlayerGlobalData.Instance is ready
+        
         StartCoroutine(WaitForPlayerGlobalData());
     }
 
     private IEnumerator WaitForPlayerGlobalData()
     {
-        // Wait until PlayerGlobalData.Instance is NOT null
+        
         while (PlayerGlobalData.Instance == null)
         {
-            //Debug.Log("Waiting for PlayerGlobalData to be initialized...");
-            yield return null; // wait for next frame
+            
+            yield return null; 
         }
 
         // Once ready, initialize timer

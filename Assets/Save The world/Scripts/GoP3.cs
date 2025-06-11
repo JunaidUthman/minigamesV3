@@ -13,6 +13,8 @@ public class OpGen3 : MonoBehaviour
     public TMP_Text soustractionText;
     public TMP_Text[] optionTexts; // Les options à glisser
 
+    private SW_ScoreDelivring SW_ScoreDelivringRef;
+
 
 
     private List<DropZone> activeDropZones = new List<DropZone>();
@@ -28,10 +30,12 @@ public class OpGen3 : MonoBehaviour
 
     void Start()
     {
-        //minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
-        //Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation3 = " + minNumberRange);
-        //maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
-        //Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation3 = " + maxNumberRange);
+        SW_ScoreDelivringRef = GameObject.Find("score_Delivring").GetComponent<SW_ScoreDelivring>();
+
+        minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
+        Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation3 = " + minNumberRange);
+        maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
+        Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation3 = " + maxNumberRange);
         if (levelManager == null)
             levelManager = FindObjectOfType<LevelManager>();
         GenerateProblem();
@@ -43,9 +47,15 @@ public class OpGen3 : MonoBehaviour
         //ClearAllDropZones();
 
         // Générer une division simple
-        int diviseur = Random.Range(2, 10);
-        int quotient = Random.Range(2, 15);
-        int reste = Random.Range(0, diviseur - 1);
+        //int diviseur = Random.Range(2, 10);
+        //int quotient = Random.Range(2, 15);
+        //int reste = Random.Range(0, diviseur - 1);
+        //int dividende = (quotient * diviseur) + reste;
+        //int soustraction = quotient * diviseur;
+
+        int diviseur = Random.Range(minNumberRange, maxNumberRange);
+        int quotient = Random.Range(minNumberRange, maxNumberRange);
+        int reste = Random.Range(minNumberRange, diviseur - 1);
         int dividende = (quotient * diviseur) + reste;
         int soustraction = quotient * diviseur;
 
@@ -185,6 +195,8 @@ public class OpGen3 : MonoBehaviour
             // junaid : i added this line so i can switch between canvas
             //isRight = true;
             //FindObjectOfType<OperationManager>().TryNextOperation(isRight);
+
+            SW_ScoreDelivringRef.deliverScore(ScoreManager.Instance.GetScore());
         }
         else
         {
