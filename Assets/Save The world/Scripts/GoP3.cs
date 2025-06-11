@@ -19,6 +19,8 @@ public class OpGen3 : MonoBehaviour
     private Dictionary<DropZone, string> correctAnswers = new Dictionary<DropZone, string>();
 
     public bool isRight = false;
+    public LevelManager levelManager; // à assigner dans l’inspecteur
+
 
     // db variables
     private int minNumberRange;
@@ -30,7 +32,8 @@ public class OpGen3 : MonoBehaviour
         //Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation3 = " + minNumberRange);
         //maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
         //Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation3 = " + maxNumberRange);
-
+        if (levelManager == null)
+            levelManager = FindObjectOfType<LevelManager>();
         GenerateProblem();
     }
 
@@ -178,17 +181,24 @@ public class OpGen3 : MonoBehaviour
         if (correctCount == activeDropZones.Count)
         {
             Debug.Log("Toutes les réponses sont correctes !");
+
             // junaid : i added this line so i can switch between canvas
-            isRight = true;
-            FindObjectOfType<OperationManager>().TryNextOperation(isRight);
+            //isRight = true;
+            //FindObjectOfType<OperationManager>().TryNextOperation(isRight);
         }
         else
         {
             Debug.Log("Certaines réponses sont incorrectes, essayez encore !");
+
         }
-        ScoreManager.Instance.AddScore(correctCount);
+        ScoreManager.Instance.AddScore(correctCount*10);
+        levelManager.ShowResult(correctCount, activeDropZones.Count);
+        levelManager.ShowScore(ScoreManager.Instance.GetScore());
+
         Debug.Log($"Nombre de réponses correctes : {correctCount} sur {activeDropZones.Count}");
         Debug.Log("score : " + ScoreManager.Instance.GetScore());
+        //rénitialiser le score après stockage en DB
+        //ScoreManager.Instance.ResetScore();
     }
 
 

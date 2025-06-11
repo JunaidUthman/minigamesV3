@@ -12,6 +12,7 @@ public class OpGen2 : MonoBehaviour
     public TMP_Text resteText;
     public TMP_Text soustractionText;
     public TMP_Text[] optionTexts; // Les options à glisser
+    public LevelManager levelManager; // à assigner dans l’inspecteur
 
 
 
@@ -31,6 +32,8 @@ public class OpGen2 : MonoBehaviour
         //maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
         //Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation2 = " + maxNumberRange);
 
+        if (levelManager == null)
+            levelManager = FindObjectOfType<LevelManager>();
         GenerateProblem();
     }
 
@@ -179,15 +182,18 @@ public class OpGen2 : MonoBehaviour
         {
             Debug.Log("Toutes les réponses sont correctes !");
             // junaid : i added this line so i can switch between canvas
-            isRight = true;
-            FindObjectOfType<OperationManager>().TryNextOperation(isRight);
+            //isRight = true;
+            //FindObjectOfType<OperationManager>().TryNextOperation(isRight);
+
         }
         else
         {
-            Debug.Log("Certaines réponses sont incorrectes, essayez encore !");
+            Debug.Log("Certaines réponses sont incorrectes!");
+
         }
-        ScoreManager.Instance.AddScore(correctCount);
-        Debug.Log("score : "+ScoreManager.Instance.GetScore());
+        ScoreManager.Instance.AddScore(correctCount * 10);
+        levelManager.ShowResult(correctCount, activeDropZones.Count);
+        levelManager.ShowScore(ScoreManager.Instance.GetScore()); Debug.Log("score : "+ScoreManager.Instance.GetScore());
 
         Debug.Log($"Nombre de réponses correctes : {correctCount} sur {activeDropZones.Count}");
     }

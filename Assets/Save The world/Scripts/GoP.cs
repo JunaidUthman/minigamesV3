@@ -17,6 +17,8 @@ public class GoP : MonoBehaviour
     public GameObject resteGO;
 
     public bool isRight=false;
+    [Header("Results Manager")]
+    public LevelManager levelManager; // à assigner dans l’inspecteur
 
     //private int dividend;
     //private int divisor;
@@ -31,7 +33,7 @@ public class GoP : MonoBehaviour
     public enum HiddenPart { Result, Soustraction, Reste }
     private DropZone currentDropZone;
 
-    private SW_ScoreDelivring SW_ScoreDelivringRef;
+    //private SW_ScoreDelivring SW_ScoreDelivringRef;
 
     // db variables
     private int minNumberRange;
@@ -39,14 +41,15 @@ public class GoP : MonoBehaviour
 
     void Start()
     {
-        SW_ScoreDelivringRef = GameObject.Find("score_Delivring").GetComponent<SW_ScoreDelivring>();
+        //SW_ScoreDelivringRef = GameObject.Find("score_Delivring").GetComponent<SW_ScoreDelivring>();
 
         //minNumberRange = GameConfigManager.Instance.verticalOperations.minNumberRange;
         //Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation1 = " + minNumberRange);
         //maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
         //Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation1 = " + maxNumberRange);
 
-
+        if (levelManager == null)
+            levelManager = FindObjectOfType<LevelManager>();
         GenerateDivision();
         HideRandomPart();
         GenerateOptions(correctAnswer);
@@ -55,14 +58,19 @@ public class GoP : MonoBehaviour
     void GenerateDivision()
     {
         //pour version DB
-        int diviseur = Random.Range(2, 10);
-        int result = Random.Range(2, 10);
-        int reste = Random.Range(2, diviseur); // reste < diviseur
+        //int diviseur = Random.Range(minNumberRange, maxNumberRange);
+        //int result = Random.Range(minNumberRange, maxNumberRange);
+        //int reste = Random.Range(minNumberRange, diviseur); // reste < diviseur
+        //int produit = diviseur * result;
+        //int dividende = produit + reste;
+        //int soustraction = produit;
+
+        int diviseur = Random.Range(0, 10);
+        int result = Random.Range(0, 10);
+        int reste = Random.Range(0, diviseur); // reste < diviseur
         int produit = diviseur * result;
         int dividende = produit + reste;
         int soustraction = produit;
-
-
 
 
         //affecter les objets 
@@ -197,7 +205,7 @@ public class GoP : MonoBehaviour
     {
         CheckAnswer();
     }
-   public void CheckAnswer()
+    public void CheckAnswer()
     {
         if (currentDropZone != null && currentDropZone.targetText != null)
         {
@@ -212,21 +220,24 @@ public class GoP : MonoBehaviour
 
             if (placedAnswer == correctAnswer)
             {
-                
                 Debug.Log("good job");
-                ScoreManager.Instance.AddScore(3);
+                ScoreManager.Instance.AddScore(10);
                 Debug.Log("score : " + ScoreManager.Instance.GetScore());
-                // junaid : i added this lines so i can switch between canvas
-                isRight = true;
-                FindObjectOfType<OperationManager>().TryNextOperation(isRight);
 
+                levelManager.ShowResult(1, 1);
+
+
+                //isRight = true;
+                //FindObjectOfType<OperationManager>().TryNextOperation(isRight);
                 //SW_ScoreDelivringRef.deliverScore(ScoreManager.Instance.GetScore());
-
-
             }
             else
             {
                 Debug.Log("wrong answer");
+                levelManager.ShowResult(0, 1);
+
+                // Optionnel: vous pouvez aussi notifier les mauvaises réponses
+                // resultsManager?.OnWrongAnswer();
             }
         }
     }

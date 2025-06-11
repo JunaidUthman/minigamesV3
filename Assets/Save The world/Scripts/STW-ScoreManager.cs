@@ -10,12 +10,18 @@ public class ScoreManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Persiste entre les niveaux
+            //DontDestroyOnLoad(gameObject); // Persiste entre les niveaux
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    //restore score
+    public void ResetScore()
+    {
+        score = 0;
     }
 
     public void AddScore(int value)

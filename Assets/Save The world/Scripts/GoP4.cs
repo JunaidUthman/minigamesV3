@@ -15,6 +15,9 @@ public class GoP3 : MonoBehaviour
     public TMP_Text soustrResultText;
     public TMP_Text soustr2Text;
     public TMP_Text[] optionTexts; // Les options à glisser
+    private SW_ScoreDelivring SW_ScoreDelivringRef;
+    public LevelManager levelManager; // à assigner dans l’inspecteur
+
 
 
 
@@ -27,7 +30,6 @@ public class GoP3 : MonoBehaviour
     private int minNumberRange;
     private int maxNumberRange;
 
-    private SW_ScoreDelivring SW_ScoreDelivringRef;
 
     void Start()
     {
@@ -37,7 +39,8 @@ public class GoP3 : MonoBehaviour
         //Debug.Log("GameConfigManager.Instance.verticalOperations.minNumberRange in Operation4 = " + minNumberRange);
         //maxNumberRange = GameConfigManager.Instance.verticalOperations.maxNumberRange;
         //Debug.Log("GameConfigManager.Instance.verticalOperations.maxNumberRange in Operation4 = " + maxNumberRange);
-
+        if (levelManager == null)
+            levelManager = FindObjectOfType<LevelManager>();
         GenerateProblem();
     }
 
@@ -256,15 +259,21 @@ public class GoP3 : MonoBehaviour
         {
             Debug.Log("Toutes les réponses sont correctes !");
             // junaid : i added this line so i can switch between canvas
-            Debug.Log("tis is te last game");
-            //SW_ScoreDelivringRef.deliverScore(ScoreManager.Instance.GetScore());
+            levelManager.ShowResult(correctCount, activeDropZones.Count);
+            levelManager.ShowScore(ScoreManager.Instance.GetScore());
+            SW_ScoreDelivringRef.deliverScore(ScoreManager.Instance.GetScore());
 
 
         }
         else
         {
             Debug.Log("Certaines réponses sont incorrectes, essayez encore !");
+            levelManager.ShowResult(correctCount, activeDropZones.Count);
+            levelManager.ShowScore(ScoreManager.Instance.GetScore());
+
         }
+        ScoreManager.Instance.AddScore(correctCount * 10);
+
         Debug.Log($"Nombre de réponses correctes : {correctCount} sur {activeDropZones.Count}");
     }
 
