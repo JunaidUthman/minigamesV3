@@ -60,7 +60,7 @@ public class entringGames : MonoBehaviour
         }
         else if (planet1Button)
         {
-            SceneManager.LoadScene(9);
+            SceneManager.LoadScene(10);
         }
         else if (planet2Button)
         {

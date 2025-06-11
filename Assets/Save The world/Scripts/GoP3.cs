@@ -197,6 +197,8 @@ public class OpGen3 : MonoBehaviour
 
         Debug.Log($"Nombre de réponses correctes : {correctCount} sur {activeDropZones.Count}");
         Debug.Log("score : " + ScoreManager.Instance.GetScore());
+        //rénitialiser le score après stockage en DB
+        //ScoreManager.Instance.ResetScore();
     }
 
 

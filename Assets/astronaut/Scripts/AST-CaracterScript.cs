@@ -42,10 +42,6 @@ public class Caracter : MonoBehaviour
     }
 
     void Start()
-
-
-
-
     {
 
 
@@ -82,20 +78,28 @@ public class Caracter : MonoBehaviour
         float topLimit = Camera.main.orthographicSize;
         float bottomLimit = -Camera.main.orthographicSize;
 
-        if (transform.position.y > topLimit || transform.position.y < bottomLimit)
+        float screenAspect = Camera.main.aspect;
+        float leftLimit = -Camera.main.orthographicSize * screenAspect;
+
+        // ➤ Bird dépasse par le haut, le bas ou la gauche
+        if (transform.position.y > topLimit ||
+            transform.position.y < bottomLimit ||
+            transform.position.x < leftLimit)
         {
             sc.GameOver();
             birdIsAlive = false;
+            StopGeneratingStones(); // ← n'oublie pas de stopper ici aussi
         }
-        if(sc.playerScore > 10)
+
+        if (sc.playerScore > 10)
         {
             birdIsAlive = false;
             StopGeneratingStones();
             ScoreDeliveringRef.deliverScore(sc.playerScore);
             SceneManager.LoadScene(1);
-
         }
     }
+
 
 
     public void StopGeneratingStones()

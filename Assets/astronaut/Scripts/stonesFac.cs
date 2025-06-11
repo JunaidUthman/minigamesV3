@@ -15,7 +15,7 @@ public class StonesFactory : MonoBehaviour
     public GameObject stonePrefab; // Un prefab qui contient les deux pierres (haut et bas)
     public float spawnInterval = 5f;
     public float spawnX = 10f;
-    public float despawnX = -15f;
+    public float despawnX = -30f;
 
     [Header("Optimization Mode")]
     [Tooltip("Pool Mode: Réutilise les stones. Single Mode: Une seule stone recyclée")]

@@ -71,25 +71,18 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log($"{name} - End Drag");
-
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;
 
+        // Si on ne l'a pas posé sur une dropzone, revenir à l'origine
         if (currentDropZone == null)
         {
-            Debug.Log($"{name} - No drop zone detected. Returning to origin.");
             ReturnToOrigin();
-        }
-        else
-        {
-            Debug.Log($"{name} - Successfully dropped on: {currentDropZone.name}");
         }
     }
 
     public void ReturnToOrigin()
     {
-        Debug.Log($"{name} - Returning to original position.");
         gameObject.SetActive(true);
         transform.SetParent(originalParent, false);
         rectTransform.anchoredPosition = originalPosition;
