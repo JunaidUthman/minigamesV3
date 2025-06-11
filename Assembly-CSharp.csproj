@@ -106,6 +106,7 @@
     <Compile Include="Assets\Scripts\Firebase\FirebaseManager.cs" />
     <Compile Include="Assets\LOBY\scripts\LOBY_guideScript.cs" />
     <Compile Include="Assets\astronaut\Scripts\AST-StonesMoveScript.cs" />
+    <Compile Include="Assets\LOBY\scripts\BadgeDisplayManager.cs" />
     <Compile Include="Assets\LOBY\scripts\LOBY_marker_movement.cs" />
     <Compile Include="Assets\astrunautMenue\scripts\astrunautTimeManager.cs" />
     <Compile Include="Assets\LOBY\scripts\LOBY_camera_movement.cs" />

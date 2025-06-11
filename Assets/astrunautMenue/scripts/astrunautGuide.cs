@@ -5,6 +5,8 @@ using TMPro;
 
 public class astrunautGuide : MonoBehaviour
 {
+    public static astrunautGuide Instance; // Singleton
+
     public GameObject guidePanel;
     public TextMeshProUGUI guideText;
     public Button nextButton;
@@ -14,30 +16,56 @@ public class astrunautGuide : MonoBehaviour
     public GameObject timeButtons;
 
     private int currentIndex = 0;
+    private bool isSeen = false;
 
     private string[] messages = new string[]
-{
-    "Boom! Your fire-ship just exploded!",
-    "Now you're drifting solo through space!",
-    "Use the space stones to move forward.",
-    "But be careful — only pick the correct ones.",
-    "Let the space quest begin. Good luck, pilot!"
-};
-
-
+    {
+        "Boom! Your fire-ship just exploded!",
+        "Now you're drifting solo through space!",
+        "Use the space stones to move forward.",
+        "But be careful — only pick the correct ones.",
+        "Let the space quest begin. Good luck, pilot!"
+    };
 
     public Sprite[] guideImages;
 
+    void Awake()
+    {
+        // Singleton pattern
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject); // Avoid duplicates
+            return;
+        }
+    }
+
     void Start()
     {
-        menueButtons.SetActive(false);
-        ExitButton.SetActive(true);
-        guidePanel.SetActive(true);
-        timeButtons.SetActive(false);
-        guideText.text = messages[currentIndex];
-        guideImage.sprite = guideImages[currentIndex];
-        nextButton.onClick.AddListener(ShowNextMessage);
-        Time.timeScale = 0f;
+        if (!isSeen)
+        {
+            isSeen = true;
+            guidePanel.SetActive(true);
+            guideText.text = messages[currentIndex];
+            guideImage.sprite = guideImages[currentIndex];
+            nextButton.onClick.AddListener(ShowNextMessage);
+            ExitButton.SetActive(true);
+            menueButtons.SetActive(false);
+            timeButtons.SetActive(false);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            // Hide guide if already shown
+            guidePanel.SetActive(false);
+            ExitButton.SetActive(false);
+            menueButtons.SetActive(true);
+            timeButtons.SetActive(true);
+        }
     }
 
     void ShowNextMessage()
@@ -50,15 +78,16 @@ public class astrunautGuide : MonoBehaviour
         }
         else
         {
-            guidePanel.SetActive(false);
-            ExitButton.SetActive(false);
-            menueButtons.SetActive(true);
-            timeButtons.SetActive(true);
-            Time.timeScale = 1f;
+            CloseGuide();
         }
     }
 
     public void OnExitClicked()
+    {
+        CloseGuide();
+    }
+
+    void CloseGuide()
     {
         guidePanel.SetActive(false);
         ExitButton.SetActive(false);

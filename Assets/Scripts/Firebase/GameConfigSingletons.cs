@@ -1,7 +1,5 @@
 using UnityEngine;
 
-
-
 public class GameConfigManager : MonoBehaviour
 {
     public static GameConfigManager Instance { get; private set; }
@@ -17,7 +15,6 @@ public class GameConfigManager : MonoBehaviour
     private void Awake()
     {
         if (Instance != null) {
-            Debug.Log("iwaaaa chi hed ra mkhdem had linstance");
             Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(gameObject);

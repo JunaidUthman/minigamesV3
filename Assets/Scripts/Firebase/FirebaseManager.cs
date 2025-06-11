@@ -14,7 +14,7 @@ public class FirebaseManager : MonoBehaviour
 
     void Awake()
     {
-        // Singleton setup
+  
         if (Instance != null)
         {
             Destroy(gameObject);
@@ -22,9 +22,9 @@ public class FirebaseManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject); // Stays alive between scenes
+        DontDestroyOnLoad(gameObject); 
 
-        // Initialize Firebase
+        
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
             if (task.Result == DependencyStatus.Available)
