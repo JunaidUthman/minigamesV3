@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cff79a4215fb96d4993209b8601692ce
+guid: ede6ad122d42cf9428513569aedb4f51
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8664491732589014769
-    second: 1-2-Photoroom_0
+      213: -962319851728408841
+    second: Design_sans_titre__4_-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1-2-Photoroom_0
+      name: Design_sans_titre__4_-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 149
-        y: 115
-        width: 747
-        height: 860
+        x: 148
+        y: 55
+        width: 413
+        height: 252
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f0119b7fcaa81c780800000000000000
-      internalID: -8664491732589014769
+      spriteID: 7feeb65813725a2f0800000000000000
+      internalID: -962319851728408841
       vertices: []
       indices: 
       edges: []
@@ -160,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      1-2-Photoroom_0: -8664491732589014769
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
