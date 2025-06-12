@@ -14,6 +14,7 @@ public class gamePlay_ButtonHandler : MonoBehaviour
         ScoreDeliveringRef = GameObject.Find("player_ship").GetComponent<ScoreDelivering>();
         ScoreHandlerRef = GameObject.Find("player_ship").GetComponent<Score_Handling>();
     }
+
     public void replay()
     {
         Time.timeScale = 1f;
@@ -23,8 +24,9 @@ public class gamePlay_ButtonHandler : MonoBehaviour
 
     public void exitToMenue()
     {
-        Time.timeScale = 1f;
+        
         ScoreDeliveringRef.deliverScore(ScoreHandlerRef.score);
+        Time.timeScale = 1f;
         SceneManager.LoadSceneAsync(1);
     }
 

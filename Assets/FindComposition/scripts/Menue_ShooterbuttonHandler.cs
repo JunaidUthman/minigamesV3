@@ -8,4 +8,10 @@ public class ButtonHandler : MonoBehaviour
         Debug.Log("im about to go to scean 2 !!!!!!!!!!!!!!!");
         SceneManager.LoadSceneAsync(2);
     }
+
+
+    public void ExitMenue()
+    {
+        SceneManager.LoadSceneAsync(1);
+    }
 }

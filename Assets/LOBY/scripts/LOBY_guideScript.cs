@@ -5,6 +5,8 @@ using TMPro;
 
 public class GuideManager : MonoBehaviour
 {
+    public static GuideManager Instance; // Singleton reference
+
     public GameObject guidePanel;
     public TextMeshProUGUI guideText;
     public Button nextButton;
@@ -22,17 +24,42 @@ public class GuideManager : MonoBehaviour
         "Good luck and have fun!"
     };
 
-    public Sprite[] guideImages; 
+    public Sprite[] guideImages;
+
+    private bool isSeen = false;
+
+    void Awake()
+    {
+        // Singleton setup
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy any new duplicates
+            return;
+        }
+    }
 
     void Start()
     {
-        miniMap.SetActive(false);
-        ExitButton.SetActive(true);
-        guidePanel.SetActive(true);
-        guideText.text = messages[currentIndex];
-        guideImage.sprite = guideImages[currentIndex]; 
-        nextButton.onClick.AddListener(ShowNextMessage);
-        Time.timeScale = 0f; 
+        if (!isSeen)
+        {
+            isSeen = true;
+            miniMap.SetActive(false);
+            ExitButton.SetActive(true);
+            guidePanel.SetActive(true);
+            guideText.text = messages[currentIndex];
+            guideImage.sprite = guideImages[currentIndex];
+            nextButton.onClick.AddListener(ShowNextMessage);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            guidePanel.SetActive(false);
+        }
     }
 
     void ShowNextMessage()
