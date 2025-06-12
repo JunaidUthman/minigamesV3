@@ -79,7 +79,7 @@ public class Caracter : MonoBehaviour
         float bottomLimit = -Camera.main.orthographicSize;
 
         float screenAspect = Camera.main.aspect;
-        float leftLimit = -Camera.main.orthographicSize * screenAspect;
+        float leftLimit = -17;
 
 
         if (transform.position.y > topLimit ||
@@ -91,7 +91,7 @@ public class Caracter : MonoBehaviour
             StopGeneratingStones(); 
         }
 
-        if (sc.playerScore > 15)
+        if (sc.playerScore > 30)
         {
             birdIsAlive = false;
             StopGeneratingStones();

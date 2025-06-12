@@ -945,7 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 468879783}
-  flipStrenght: 10
+  flipStrenght: 14.42
   sc: {fileID: 1005578824}
   ch: {fileID: 1900872719}
   birdIsAlive: 1

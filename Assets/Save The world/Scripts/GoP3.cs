@@ -203,7 +203,7 @@ public class OpGen3 : MonoBehaviour
             Debug.Log("Certaines réponses sont incorrectes, essayez encore !");
 
         }
-        ScoreManager.Instance.AddScore(correctCount*10);
+        ScoreManager.Instance.AddScore(correctCount);
         levelManager.ShowResult(correctCount, activeDropZones.Count);
         levelManager.ShowScore(ScoreManager.Instance.GetScore());
 

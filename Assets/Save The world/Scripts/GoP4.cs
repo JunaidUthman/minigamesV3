@@ -272,7 +272,7 @@ public class GoP3 : MonoBehaviour
             levelManager.ShowScore(ScoreManager.Instance.GetScore());
 
         }
-        ScoreManager.Instance.AddScore(correctCount * 10);
+        ScoreManager.Instance.AddScore(correctCount);
 
         Debug.Log($"Nombre de réponses correctes : {correctCount} sur {activeDropZones.Count}");
     }
