@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      arriere-plan-de-galaxie-de-style-fantastique_0: 2859562879465834858
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
