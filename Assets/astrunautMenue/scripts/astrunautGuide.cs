@@ -11,7 +11,7 @@ public class astrunautGuide : MonoBehaviour
     public TextMeshProUGUI guideText;
     public Button nextButton;
     public Image guideImage;
-    public GameObject ExitButton;
+    //public GameObject ExitButton;
     public GameObject menueButtons;
     public GameObject timeButtons;
 
@@ -53,7 +53,7 @@ public class astrunautGuide : MonoBehaviour
             guideText.text = messages[currentIndex];
             guideImage.sprite = guideImages[currentIndex];
             nextButton.onClick.AddListener(ShowNextMessage);
-            ExitButton.SetActive(true);
+            //ExitButton.SetActive(true);
             menueButtons.SetActive(false);
             timeButtons.SetActive(false);
             Time.timeScale = 0f;
@@ -62,7 +62,7 @@ public class astrunautGuide : MonoBehaviour
         {
             // Hide guide if already shown
             guidePanel.SetActive(false);
-            ExitButton.SetActive(false);
+            //ExitButton.SetActive(false);
             menueButtons.SetActive(true);
             timeButtons.SetActive(true);
         }
@@ -90,7 +90,7 @@ public class astrunautGuide : MonoBehaviour
     void CloseGuide()
     {
         guidePanel.SetActive(false);
-        ExitButton.SetActive(false);
+        //ExitButton.SetActive(false);
         menueButtons.SetActive(true);
         timeButtons.SetActive(true);
         Time.timeScale = 1f;
