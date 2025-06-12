@@ -221,7 +221,7 @@ public class GoP : MonoBehaviour
             if (placedAnswer == correctAnswer)
             {
                 Debug.Log("good job");
-                ScoreManager.Instance.AddScore(10);
+                ScoreManager.Instance.AddScore(1);
                 Debug.Log("score : " + ScoreManager.Instance.GetScore());
 
                 levelManager.ShowResult(1, 1);

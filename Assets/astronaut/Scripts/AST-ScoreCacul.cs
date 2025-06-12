@@ -14,7 +14,7 @@ public class ScoreCacul : MonoBehaviour
     [ContextMenu("increase")]
     public void addScore()
     {
-        playerScore += 5;
+        playerScore += 1;
         scoreText.text = playerScore.ToString();
     }
 
