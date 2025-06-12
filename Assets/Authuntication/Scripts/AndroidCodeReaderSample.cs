@@ -340,6 +340,8 @@ public class StandaloneEasyReaderSample : MonoBehaviour
                 minNumberRange = int.Parse(snapshot.Child("minNumberRange").Value?.ToString() ?? "0")
             };
 
+            //Debug.Log("max num range" )
+
             Debug.Log("Game config loaded successfully for: " + snapshot.Key);
             return config;
         }

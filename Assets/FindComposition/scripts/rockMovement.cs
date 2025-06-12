@@ -7,7 +7,7 @@ public class rockMovement : MonoBehaviour
     //==========Rocks==========
    public GameObject WrongRock;
    public GameObject RigthRock;
-   public float timeBeforeInstantiantion;
+   private float timeBeforeInstantiantion;
 
    public List<string> RightdivisionCompositions;
    public List<string> WrongdivisionCompositions;
@@ -35,7 +35,7 @@ public class rockMovement : MonoBehaviour
         targets = generateTargets(maxRange);
         target = targets[0];
 
-        timeBeforeInstantiantion = 1f;
+        timeBeforeInstantiantion = 2f;
 
         Debug.Log("generating the answers of the rigth rock");
         RightdivisionCompositions = DivisionCompositionGenerator.GenerateRightDivisionCompositionsAsText(target, maxRange, minCompositions);
@@ -61,7 +61,7 @@ public class rockMovement : MonoBehaviour
     void generateRock()
     {
         Debug.Log("generating the rocks have just bigen");
-        float randomX = Random.Range(0.2f, 0.8f);
+        float randomX = Random.Range(0.1f, 0.9f);
 
         int number = UnityEngine.Random.Range(1, 3);
         if (number == 1)

@@ -7,10 +7,22 @@ public class OpGenerator : MonoBehaviour
     public TextMeshPro OperationText;
      int fakeResult;
 
+    // db data 
+
+    private int minNumberRange;
+    private int maxNumberRange;
     //public TextMeshPro topOptionText;
     //public TextMeshPro bottomOptionText;
 
-    
+    void Start()
+    {
+        minNumberRange = GameConfigManager.Instance.chooseAnswer.minNumberRange;
+        Debug.Log("GameConfigManager.Instance.chooseAnswer.minNumberRange =" + GameConfigManager.Instance.chooseAnswer.minNumberRange);
+        maxNumberRange = GameConfigManager.Instance.chooseAnswer.maxNumberRange;
+        Debug.Log("GameConfigManager.Instance.chooseAnswer.maxNumberRange =" + GameConfigManager.Instance.chooseAnswer.maxNumberRange);
+    }
+
+
 
 
     public void GeneratorOperation(TextMeshPro topOptionText, TextMeshPro bottomOptionText) { 

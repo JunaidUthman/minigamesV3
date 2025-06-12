@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
-  <string name="firebase_database_url" translatable="false">https://space-math-aa31c-default-rtdb.firebaseio.com</string>
-  <string name="gcm_defaultSenderId" translatable="false">86674134392</string>
-  <string name="google_storage_bucket" translatable="false">space-math-aa31c.firebasestorage.app</string>
-  <string name="project_id" translatable="false">space-math-aa31c</string>
-  <string name="google_api_key" translatable="false">AIzaSyBtfuChXG1oYfnaX3MpHZJ-HoJ6Y5DffXg</string>
-  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBtfuChXG1oYfnaX3MpHZJ-HoJ6Y5DffXg</string>
-  <string name="google_app_id" translatable="false">1:86674134392:android:42ca7f302aa8023f67a48d</string>
+  <string name="firebase_database_url" translatable="false">https://web-dashboard-project-default-rtdb.europe-west1.firebasedatabase.app</string>
+  <string name="gcm_defaultSenderId" translatable="false">1010089448515</string>
+  <string name="google_storage_bucket" translatable="false">web-dashboard-project.firebasestorage.app</string>
+  <string name="project_id" translatable="false">web-dashboard-project</string>
+  <string name="google_api_key" translatable="false">AIzaSyAJmaofnbCb4UPyDIj954e2SwFFyvdHH1A</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAJmaofnbCb4UPyDIj954e2SwFFyvdHH1A</string>
+  <string name="google_app_id" translatable="false">1:1010089448515:android:7cb67e0e252b3adfcc70f6</string>
 </resources>
