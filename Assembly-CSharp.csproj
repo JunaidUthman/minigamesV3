@@ -80,6 +80,7 @@
     <Compile Include="Assets\astronaut\Scripts\AST-CaracterScript.cs" />
     <Compile Include="Assets\FindComposition\scripts\gamePlay_ButtonHandler.cs" />
     <Compile Include="Assets\Save The world\Scripts\STW_timeHandling.cs" />
+    <Compile Include="Assets\astronaut\Scripts\BG.cs" />
     <Compile Include="Assets\astrunautMenue\scripts\astrunautButtonManager.cs" />
     <Compile Include="Assets\EndGame\Scripts\EndGame_guide.cs" />
     <Compile Include="Assets\FindComposition\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
